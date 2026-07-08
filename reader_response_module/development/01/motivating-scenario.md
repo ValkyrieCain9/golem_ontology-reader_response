@@ -14,12 +14,12 @@ On `site_A`, `user_1` posts a story which `user_2` responds to with `comment_1`.
 <img width="1140" height="328" alt="ao3_thread" src="https://github.com/user-attachments/assets/4224e6de-4cdb-4d9c-9252-3bb86f79f7e0" />
 
 ## Example 2
-On `site_B`, `user_3` creates a `post` discussing an anime. The `comment_section` contains multiple comments and multiple threads. `thread_2` contains 7 different comments from 7 different users. 
+On `site_B`, `user_3` creates a `post` discussing an anime. The `comment_section` contains multiple comments and multiple threads. `comment_3` is the `parent_comment` to `thread_2` which contains 7 different comments from 7 different users. 
 
 <img width="805" height="732" alt="reddit_thread" src="https://github.com/user-attachments/assets/a75565f8-135f-4eab-b9f2-fef8de7823c5" />
 
 ## Example 3
-On `site_C`, which hosts online fiction, `user_4` leaves `comment_3` targetting a particular paragraph in the online story and recieves two replies to the comment.
+On `site_C`, which hosts online fiction, `user_4` leaves `comment_4` targetting a particular paragraph in the online story and recieves 8 thumbs up as positive response to their comment.
 
 <img width="1214" height="442" alt="webnovel_para-comment" src="https://github.com/user-attachments/assets/d108d3cb-35b4-447d-acc0-860e7fe28bb2" />
 
