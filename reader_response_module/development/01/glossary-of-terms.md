@@ -2,7 +2,7 @@
 
 | Term | Definition |
 | ---- | ---------- |
-| `Comment` | A response to a piece of content posted online. |
+| `Comment` | A response to a piece of content posted online. It can either exist as a standalone comment, responding directly to the post, or as part of a comment thread, replying to both the orginal post and other comments. |
 | `Post` | Anything uploaded to a website by a user. This can include but is not limited to, fictional work, art, discussions, videos etc. |
 | `Site` | A website or platform where users can make accounts to interact with each other, sharing posts a responding with comments. |
 | `Thread` | A collection of nested comments. |
