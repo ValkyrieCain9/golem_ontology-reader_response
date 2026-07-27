@@ -1,0 +1,86 @@
+@prefix : <https://w3id.org/golem/ontology/response#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/golem/ontology/response#> a owl:Ontology .
+
+:hasComment a owl:ObjectProperty ;
+    rdfs:domain :Post ;
+    rdfs:range :Comment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasReply a owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasComment ;
+    rdfs:domain :Comment ;
+    rdfs:range :Comment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasThread a owl:ObjectProperty ;
+    rdfs:domain :Post ;
+    rdfs:range :Thread ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasPost a owl:ObjectProperty ;
+    rdfs:domain :Site ;
+    rdfs:range :Post ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:partOfThread a owl:ObjectProperty ;
+    rdfs:domain :Comment ;
+    rdfs:range :Thread ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:createdBy a owl:ObjectProperty ;
+    rdfs:domain :Comment, :Post ;
+    rdfs:range :User ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasAccount a owl:ObjectProperty ;
+    rdfs:domain :User, :Site ;
+    rdfs:range :Account ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasRatingSystem a owl:ObjectProperty ;
+    rdfs:domain :Rating, :Site ;
+    rdfs:range :RatingSystem ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasRating a owl:ObjectProperty ;
+    rdfs:domain :Comment, :Post ;
+    rdfs:range :Rating ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasSite a owl:ObjectProperty ;
+    rdfs:domain :Comment, :Post ;
+    rdfs:range :Site ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:hasRatingValue a owl:DataProperty ;
+    rdfs:domain :Rating ;
+    rdfs:range xsd:String ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Comment a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Thread a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Post a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Site a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:User a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Account a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Rating a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:RatingSystem a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> . 

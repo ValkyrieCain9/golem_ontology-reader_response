@@ -1,0 +1,45 @@
+@prefix : <https://w3id.org/golem/ontology/response/data#> .
+@prefix response: <https://w3id.org/golem/ontology/response#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+<https://w3id.org/golem/ontology/response/data#> a owl:Ontology ;
+    owl:imports <https://w3id.org/golem/ontology/response#> .
+
+:r_C1 a response:Comment ;
+    response:hasPost :r_P1 ;
+    response:createdBy :r_U1 ;
+    response:partOfThread :r_Thread1 ;
+    response:hasRating :rating_1 ;
+    response:hasReply :r_C2 .
+
+:r_P1 a response:Post ;
+    response:createdBy :r_U1 ;
+    response:hasSite :Site_1 ;
+    dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
+    response:hasRating :rating_2 .
+
+:r_U1 a response:User ;
+    response:hasAccount :r_acc1 .
+
+:Site_1 a response:Site ;
+    dcterms:title "Reddit" ;
+    response:hasAccount :r_acc1 ;
+    response:hasPost :r_P1 .
+
+:rating_1 a response:Rating ;
+    response:hasRatingSystem :system1 ;
+    response:hasRatingValue "3" .
+
+:rating_1 a response:Rating ;
+    response:hasRatingSystem :system1 ;
+    response:hasRatingValue "264" .
+
+:system1 a response:RatingSystem ;
+    dcterms:title "upvote" .
+
+
+

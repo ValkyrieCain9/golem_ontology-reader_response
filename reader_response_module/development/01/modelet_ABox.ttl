@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/golem/ontology/response#> .
+@prefix rd: <https://w3id.org/golem/ontology/response/data#> .
+
+rd: a owl:Ontology ;
+    owl:imports r: .
+
+rd:ao3_c1 r:createdBy rd:ao3_2 ;
+    r:hasPost rd:ao3_p1 ;
+    r:hasReply rd:ao3_c2 ;
+    r:partOfThreadt rd:thread_2 .
+
+rd:r_c1 r:createdBy rd:r_u1 ;
+    r:hasPost rd:r_p1 ;
+    r:hasReply rd:r_c2,
+        rd:r_c3 ;
+    r:partOfThreadt rd:thread_1 .
+
+rd:wn_c1 r:createdBy rd:wn_u2 ;
+    r:hasPost rd:wn_p1 .
+
+rd:ao3_c2 r:createdBy rd:ao3_1 ;
+    r:hasPost rd:ao3_p2 ;
+    r:partOfThreadt rd:thread_2 .
+
+rd:ao3_p1 dcterms:title "Peeps Aren't Even Good (But its back!)" ;
+    r:createdBy rd:ao3_u1 ;
+    r:hasSite rd:Ao3 .
+
+rd:ao3_p2 dcterms:title "Peeps Aren't Even Good (But its back!)" ;
+    r:createdBy rd:ao3_u1 ;
+    r:hasSite rd:Ao3 .
+
+rd:r_c2 r:createdBy rd:r_u2 ;
+    r:hasPost rd:r_p1 ;
+    r:partOfThreadt rd:thread_1 .
+
+rd:r_c3 r:createdBy rd:r_u3 ;
+    r:hasPost rd:r_p1 ;
+    r:hasReply rd:r_c4 ;
+    r:partOfThreadt rd:thread_1 .
+
+rd:r_c4 r:createdBy rd:r_u4 ;
+    r:hasPost rd:r_p1 ;
+    r:partOfThreadt rd:thread_1 .
+
+rd:wn_p1 dcterms:title "Lord of Mysteries (Ch1, para7)" ;
+    r:createdBy rd:wn_u1 ;
+    r:hasSite rd:Webnovel .
+
+rd:r_p1 dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
+    r:createdBy rd:r_u1 ;
+    r:hasSite rd:Reddit .
+
