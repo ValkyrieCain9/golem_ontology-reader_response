@@ -32,27 +32,42 @@
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :createdBy a owl:ObjectProperty ;
-    rdfs:domain :Comment, :Post ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf ( :Comment :Post )
+    ] ;
     rdfs:range :User ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :hasAccount a owl:ObjectProperty ;
-    rdfs:domain :User, :Site ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:User :Site)
+    ] ;
     rdfs:range :Account ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :hasRatingSystem a owl:ObjectProperty ;
-    rdfs:domain :Rating, :Site ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Rating :Site)
+    ] ;
     rdfs:range :RatingSystem ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :hasRating a owl:ObjectProperty ;
-    rdfs:domain :Comment, :Post ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Comment :Post)
+    ] ;
     rdfs:range :Rating ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :hasSite a owl:ObjectProperty ;
-    rdfs:domain :Comment, :Post ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Comment :Post)
+    ] ;
     rdfs:range :Site ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 

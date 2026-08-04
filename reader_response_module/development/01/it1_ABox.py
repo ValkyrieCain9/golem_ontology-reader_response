@@ -4,6 +4,9 @@ from rdflib.namespace import XSD
 
 RESPONSE_ONT = Namespace("https://w3id.org/golem/ontology/response#")
 RESPONSE_DATA = Namespace("https://w3id.org/golem/ontology/response/data#")
+CRM = Namespace("http://erlangen-crm.org/240307/")
+DLP_LITE = Namespace("http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#")
+GOLEM = Namespace("https://w3id.org/golem/ontology#")
 
 # Graph
 g = Graph()
@@ -11,12 +14,15 @@ g = Graph()
 
 g.bind("r", RESPONSE_ONT)
 g.bind("rd", RESPONSE_DATA)
+g.bind("crm", CRM)
+g.bind("dlp_lite", DLP_LITE)
+g.bind("golem", GOLEM)
 
 g.add((URIRef("https://w3id.org/golem/ontology/response/data#"), RDF.type, OWL.Ontology))
 g.add((
     URIRef("https://w3id.org/golem/ontology/response/data#"),
     OWL.imports,
-    URIRef("file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/01/modelet_TBox.ttl")
+    URIRef("file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/01/it1_Tbox.ttl")
 ))
 
 index = 1  # moved outside loop
@@ -39,7 +45,6 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
 
         site_uri = RESPONSE_DATA[row["site"].strip()]
         g.add((site_uri, RDF.type, RESPONSE_ONT.Site))
-        g.add((site_uri, RESPONSE_ONT.hasPost, post_uri))
 
         # comment triples
         g.add((post_uri, RESPONSE_ONT.hasComment, comment_uri))
@@ -48,15 +53,18 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
         if row["thread"].strip():
             thread_uri = RESPONSE_DATA[row["thread"].strip()]
             g.add((thread_uri, RDF.type, RESPONSE_ONT.Thread))
-            g.add((comment_uri, RESPONSE_ONT.partOfThread, thread_uri))
+            g.add((comment_uri, DLP_LITE.part_of, thread_uri))
 
         if row["rating"].strip():
             rating_uri = RESPONSE_DATA[f"rating_{index}"]
+            rating_value_uri = RESPONSE_DATA[f"rating_value_{index}"]
             g.add((rating_uri, RDF.type, RESPONSE_ONT.Rating))
-            g.add((rating_uri, RESPONSE_ONT.hasRatingValue, Literal(row["rating"].strip())))
+            g.add((rating_value_uri, RDF.type, CRM.E54_Dimension))
+            g.add((rating_value_uri, CRM.P90_hasValue, Literal(row["rating"].strip())))
+            
             rating_system_uri = RESPONSE_DATA[row["rating system"].strip()]
             g.add((rating_system_uri, RDF.type, RESPONSE_ONT.RatingSystem))
-            g.add((rating_uri, RESPONSE_ONT.hasRatingSystem, rating_system_uri))
+            g.add((rating_uri, CRM.P177_assigned_property_of_type, rating_system_uri))
             index += 1
 
         if row["hasReply"].strip():
@@ -69,9 +77,9 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
 
         # post triples
         g.add((post_uri, RESPONSE_ONT.createdBy, post_creator_uri))
-        g.add((post_uri, RESPONSE_ONT.hasSite, site_uri))
+        g.add((post_uri, DLP_LITE.part_of, site_uri))
         g.add((post_uri, DCTERMS.title, Literal(row["post_title"].strip())))
 
 # save
-g.serialize(destination="reader_response_module/development/01/modelet_ABox.ttl", format="turtle")
-print("RDF file successfully saved as 'modelet_ABox.ttl'")
+g.serialize(destination="reader_response_module/development/01/it1_ABox.ttl", format="turtle")
+print("RDF file successfully saved as 'it1_ABox.ttl'")

@@ -1,0 +1,71 @@
+@prefix : <https://w3id.org/golem/ontology/response#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix golem: <https://w3id.org/golem/ontology#> .
+@prefix dlp_lite: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
+
+<https://w3id.org/golem/ontology/response#> a owl:Ontology ;
+    owl:imports <http://erlangen-crm.org/240307/> ,
+                <https://cidoc-crm.org/extensions/lrmoo/owl/> .
+
+:hasComment a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P67i_is_referred_to_by ;
+    rdfs:domain :Post ;
+    rdfs:range :Comment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:hasReply a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P67i_is_referred_to_by ;
+    rdfs:domain :Comment ;
+    rdfs:range :Comment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:createdBy a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf ( :Comment :Post )
+    ] ;
+    rdfs:range :User ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:hasAccount a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:User :Site)
+    ] ;
+    rdfs:range :Account ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Comment a owl:Class ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Post a owl:Class ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Site a owl:Class ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Account a owl:Class ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:User a owl:Class ;
+    rdfs:subClassOf crm:E39_Actor ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Thread a owl:Class ;
+    rdfs:subClassOf crm:E28_Conceptual_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Rating a owl:Class ;
+    rdfs:subClassOf crm:E13_Attribute_Assignment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:RatingSystem a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> . 
