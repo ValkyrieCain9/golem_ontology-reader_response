@@ -10,19 +10,19 @@
     owl:imports <http://erlangen-crm.org/240307/> ,
                 <https://cidoc-crm.org/extensions/lrmoo/owl/> .
 
-:hasComment a owl:ObjectProperty ;
+:has_comment a owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P67i_is_referred_to_by ;
     rdfs:domain :Post ;
     rdfs:range :Comment ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:hasReply a owl:ObjectProperty ;
+:has_reply a owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P67i_is_referred_to_by ;
     rdfs:domain :Comment ;
     rdfs:range :Comment ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:createdBy a owl:ObjectProperty ;
+:created_by a owl:ObjectProperty ;
     rdfs:domain [
         a owl:Class ;
         owl:unionOf ( :Comment :Post )
@@ -30,7 +30,7 @@
     rdfs:range :User ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:hasAccount a owl:ObjectProperty ;
+:has_account a owl:ObjectProperty ;
     rdfs:domain [
         a owl:Class ;
         owl:unionOf (:User :Site)

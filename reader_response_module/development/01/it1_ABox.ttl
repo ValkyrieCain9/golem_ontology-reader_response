@@ -12,19 +12,19 @@ rd:ao3_p1 a r:Post ;
     dcterms:title "Peeps Aren't Even Good (But its back!)" ;
     dlp_lite:part_of rd:Ao3 ;
     r:createdBy rd:JurassicWorldfan555 ;
-    r:hasComment rd:ao3_c1 .
+    r:has_comment rd:ao3_c1 .
 
 rd:ao3_p2 a r:Post ;
     dcterms:title "Peeps Aren't Even Good (But its back!)" ;
     dlp_lite:part_of rd:Ao3 ;
     r:createdBy rd:JurassicWorldfan555 ;
-    r:hasComment rd:ao3_c2 .
+    r:has_comment rd:ao3_c2 .
 
 rd:r_p1 a r:Post ;
     dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
     dlp_lite:part_of rd:Reddit ;
     r:createdBy rd:AnimeMod ;
-    r:hasComment rd:r_c1,
+    r:has_comment rd:r_c1,
         rd:r_c2,
         rd:r_c3,
         rd:r_c4 .
@@ -63,7 +63,7 @@ rd:wn_p1 a r:Post ;
     dcterms:title "Lord of Mysteries (Ch1, para7)" ;
     dlp_lite:part_of rd:Webnovel ;
     r:createdBy rd:Cuttlefish ;
-    r:hasComment rd:wn_c1 .
+    r:has_comment rd:wn_c1 .
 
 rd:Catystery a r:User .
 
@@ -81,8 +81,8 @@ rd:Webnovel a r:Site .
 
 rd:ao3_c1 a r:Comment ;
     dlp_lite:part_of rd:thread_2 ;
-    r:createdBy rd:TiredIntrovertawake ;
-    r:hasReply rd:ao3_c2 .
+    r:created_by rd:TiredIntrovertawake ;
+    r:has_reply rd:ao3_c2 .
 
 rd:baquea a r:User .
 
@@ -90,12 +90,12 @@ rd:like a r:RatingSystem .
 
 rd:r_c1 a r:Comment ;
     dlp_lite:part_of rd:thread_1 ;
-    r:createdBy rd:AnimeMod ;
-    r:hasReply rd:r_c2,
+    r:created_by rd:AnimeMod ;
+    r:has_reply rd:r_c2,
         rd:r_c3 .
 
 rd:wn_c1 a r:Comment ;
-    r:createdBy rd:Catystery .
+    r:created_by rd:Catystery .
 
 rd:AnimeMod a r:User .
 
@@ -103,20 +103,20 @@ rd:Ao3 a r:Site .
 
 rd:ao3_c2 a r:Comment ;
     dlp_lite:part_of rd:thread_2 ;
-    r:createdBy rd:JurassicWorldfan555 .
+    r:created_by rd:JurassicWorldfan555 .
 
 rd:r_c2 a r:Comment ;
     dlp_lite:part_of rd:thread_1 ;
-    r:createdBy rd:RascalNikov1 .
+    r:created_by rd:RascalNikov1 .
 
 rd:r_c3 a r:Comment ;
     dlp_lite:part_of rd:thread_1 ;
-    r:createdBy rd:Fools_Requiem ;
-    r:hasReply rd:r_c4 .
+    r:created_by rd:Fools_Requiem ;
+    r:has_reply rd:r_c4 .
 
 rd:r_c4 a r:Comment ;
     dlp_lite:part_of rd:thread_1 ;
-    r:createdBy rd:baquea .
+    r:created_by rd:baquea .
 
 rd:thread_2 a r:Thread .
 

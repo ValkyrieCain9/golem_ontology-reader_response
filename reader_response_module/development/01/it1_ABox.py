@@ -47,8 +47,8 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
         g.add((site_uri, RDF.type, RESPONSE_ONT.Site))
 
         # comment triples
-        g.add((post_uri, RESPONSE_ONT.hasComment, comment_uri))
-        g.add((comment_uri, RESPONSE_ONT.createdBy, comment_creator_uri))
+        g.add((post_uri, RESPONSE_ONT.has_comment, comment_uri))
+        g.add((comment_uri, RESPONSE_ONT.created_by, comment_creator_uri))
 
         if row["thread"].strip():
             thread_uri = RESPONSE_DATA[row["thread"].strip()]
@@ -73,7 +73,7 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
                 r = r.strip()
                 if r:
                     reply_uri = RESPONSE_DATA[r]
-                    g.add((comment_uri, RESPONSE_ONT.hasReply, reply_uri))
+                    g.add((comment_uri, RESPONSE_ONT.has_reply, reply_uri))
 
         # post triples
         g.add((post_uri, RESPONSE_ONT.createdBy, post_creator_uri))
