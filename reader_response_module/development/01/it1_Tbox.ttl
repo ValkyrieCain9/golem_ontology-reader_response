@@ -5,10 +5,15 @@
 @prefix crm: <http://erlangen-crm.org/240307/> .
 @prefix golem: <https://w3id.org/golem/ontology#> .
 @prefix dlp_lite: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
+@prefix dlp_csm: <http://www.ontologydesignpatterns.org/ont/dlp/> .
 
+# <https://w3id.org/golem/ontology/response#> a owl:Ontology ;
+#     owl:imports <http://erlangen-crm.org/240307/> ,
+#                 <https://cidoc-crm.org/extensions/lrmoo/owl/> ,
+#                 dlp_csm:CommonSenseMapping.owl .
 <https://w3id.org/golem/ontology/response#> a owl:Ontology ;
-    owl:imports <http://erlangen-crm.org/240307/> ,
-                <https://cidoc-crm.org/extensions/lrmoo/owl/> .
+    owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem.ttl> .
+
 
 :has_comment a owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P67i_is_referred_to_by ;

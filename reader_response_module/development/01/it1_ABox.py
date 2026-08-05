@@ -59,7 +59,9 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
             rating_uri = RESPONSE_DATA[f"rating_{index}"]
             rating_value_uri = RESPONSE_DATA[f"rating_value_{index}"]
             g.add((rating_uri, RDF.type, RESPONSE_ONT.Rating))
+            g.add((comment_uri, CRM.P140i_was_attributed_by, rating_uri))
             g.add((rating_value_uri, RDF.type, CRM.E54_Dimension))
+            g.add((rating_uri, CRM.P141_assigned, rating_value_uri))
             g.add((rating_value_uri, CRM.P90_hasValue, Literal(row["rating"].strip())))
             
             rating_system_uri = RESPONSE_DATA[row["rating system"].strip()]
@@ -76,7 +78,7 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
                     g.add((comment_uri, RESPONSE_ONT.has_reply, reply_uri))
 
         # post triples
-        g.add((post_uri, RESPONSE_ONT.createdBy, post_creator_uri))
+        g.add((post_uri, RESPONSE_ONT.created_by, post_creator_uri))
         g.add((post_uri, DLP_LITE.part_of, site_uri))
         g.add((post_uri, DCTERMS.title, Literal(row["post_title"].strip())))
 

@@ -11,58 +11,28 @@ rd: a owl:Ontology ;
 rd:ao3_p1 a r:Post ;
     dcterms:title "Peeps Aren't Even Good (But its back!)" ;
     dlp_lite:part_of rd:Ao3 ;
-    r:createdBy rd:JurassicWorldfan555 ;
+    r:created_by rd:JurassicWorldfan555 ;
     r:has_comment rd:ao3_c1 .
 
 rd:ao3_p2 a r:Post ;
     dcterms:title "Peeps Aren't Even Good (But its back!)" ;
     dlp_lite:part_of rd:Ao3 ;
-    r:createdBy rd:JurassicWorldfan555 ;
+    r:created_by rd:JurassicWorldfan555 ;
     r:has_comment rd:ao3_c2 .
 
 rd:r_p1 a r:Post ;
     dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
     dlp_lite:part_of rd:Reddit ;
-    r:createdBy rd:AnimeMod ;
+    r:created_by rd:AnimeMod ;
     r:has_comment rd:r_c1,
         rd:r_c2,
         rd:r_c3,
         rd:r_c4 .
 
-rd:rating_1 a r:Rating ;
-    crm:P177_assigned_property_of_type rd:upvote .
-
-rd:rating_2 a r:Rating ;
-    crm:P177_assigned_property_of_type rd:upvote .
-
-rd:rating_3 a r:Rating ;
-    crm:P177_assigned_property_of_type rd:upvote .
-
-rd:rating_4 a r:Rating ;
-    crm:P177_assigned_property_of_type rd:upvote .
-
-rd:rating_5 a r:Rating ;
-    crm:P177_assigned_property_of_type rd:like .
-
-rd:rating_value_1 a crm:E54_Dimension ;
-    crm:P90_hasValue "3" .
-
-rd:rating_value_2 a crm:E54_Dimension ;
-    crm:P90_hasValue "5" .
-
-rd:rating_value_3 a crm:E54_Dimension ;
-    crm:P90_hasValue "8" .
-
-rd:rating_value_4 a crm:E54_Dimension ;
-    crm:P90_hasValue "1" .
-
-rd:rating_value_5 a crm:E54_Dimension ;
-    crm:P90_hasValue "8" .
-
 rd:wn_p1 a r:Post ;
     dcterms:title "Lord of Mysteries (Ch1, para7)" ;
     dlp_lite:part_of rd:Webnovel ;
-    r:createdBy rd:Cuttlefish ;
+    r:created_by rd:Cuttlefish ;
     r:has_comment rd:wn_c1 .
 
 rd:Catystery a r:User .
@@ -89,12 +59,49 @@ rd:baquea a r:User .
 rd:like a r:RatingSystem .
 
 rd:r_c1 a r:Comment ;
+    crm:P140i_was_attributed_by rd:rating_1 ;
     dlp_lite:part_of rd:thread_1 ;
     r:created_by rd:AnimeMod ;
     r:has_reply rd:r_c2,
         rd:r_c3 .
 
+rd:rating_1 a r:Rating ;
+    crm:P141_assigned rd:rating_value_1 ;
+    crm:P177_assigned_property_of_type rd:upvote .
+
+rd:rating_2 a r:Rating ;
+    crm:P141_assigned rd:rating_value_2 ;
+    crm:P177_assigned_property_of_type rd:upvote .
+
+rd:rating_3 a r:Rating ;
+    crm:P141_assigned rd:rating_value_3 ;
+    crm:P177_assigned_property_of_type rd:upvote .
+
+rd:rating_4 a r:Rating ;
+    crm:P141_assigned rd:rating_value_4 ;
+    crm:P177_assigned_property_of_type rd:upvote .
+
+rd:rating_5 a r:Rating ;
+    crm:P141_assigned rd:rating_value_5 ;
+    crm:P177_assigned_property_of_type rd:like .
+
+rd:rating_value_1 a crm:E54_Dimension ;
+    crm:P90_hasValue "3" .
+
+rd:rating_value_2 a crm:E54_Dimension ;
+    crm:P90_hasValue "5" .
+
+rd:rating_value_3 a crm:E54_Dimension ;
+    crm:P90_hasValue "8" .
+
+rd:rating_value_4 a crm:E54_Dimension ;
+    crm:P90_hasValue "1" .
+
+rd:rating_value_5 a crm:E54_Dimension ;
+    crm:P90_hasValue "8" .
+
 rd:wn_c1 a r:Comment ;
+    crm:P140i_was_attributed_by rd:rating_5 ;
     r:created_by rd:Catystery .
 
 rd:AnimeMod a r:User .
@@ -106,15 +113,18 @@ rd:ao3_c2 a r:Comment ;
     r:created_by rd:JurassicWorldfan555 .
 
 rd:r_c2 a r:Comment ;
+    crm:P140i_was_attributed_by rd:rating_2 ;
     dlp_lite:part_of rd:thread_1 ;
     r:created_by rd:RascalNikov1 .
 
 rd:r_c3 a r:Comment ;
+    crm:P140i_was_attributed_by rd:rating_3 ;
     dlp_lite:part_of rd:thread_1 ;
     r:created_by rd:Fools_Requiem ;
     r:has_reply rd:r_c4 .
 
 rd:r_c4 a r:Comment ;
+    crm:P140i_was_attributed_by rd:rating_4 ;
     dlp_lite:part_of rd:thread_1 ;
     r:created_by rd:baquea .
 
