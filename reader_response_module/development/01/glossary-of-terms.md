@@ -1,4 +1,4 @@
-# Glossary of Terms (Iteration 1)
+# Iteration 1 - Glossary of Terms
 
 | Term | Definition |
 | ---- | ---------- |
