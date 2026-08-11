@@ -1,0 +1,131 @@
+@prefix : <https://w3id.org/golem/ontology/response#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/golem/ontology/response#> a owl:Ontology .
+
+:has_bearer a owl:ObjectProperty ;
+    rdfs:domain :Immaterial_Object ;
+    rdfs:range :Bearer ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_type a owl:ObjectProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf ( :Object :Action )
+    ] ;
+    rdfs:range :Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:results_in a owl:ObjectProperty ;
+    rdfs:domain :Action ;
+    rdfs:range :Digital_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:performed_by a owl:ObjectProperty ;
+    rdfs:domain :Action ;
+    rdfs:range :User ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:translated_by a owl:ObjectProperty ;
+    rdfs:domain :Immaterial_Object ;
+    rdfs:range :Translation_Action ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:created_by a owl:ObjectProperty ;
+    rdfs:domain :Expression ;
+    rdfs:range :User ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_account a owl:ObjectProperty ;
+    rdfs:domain :User ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            :Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty :has_type ;
+              owl:hasValue :profileAccount
+            ]
+        )
+    ] ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Object a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Type a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Action a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:User a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Material_Object a owl:Class ;
+    rdfs:subClassOf :Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Immaterial_Object a owl:Class ;
+    rdfs:subClassOf :Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Bearer a owl:Class ;
+    rdfs:subClassOf :Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Object_Type a owl:Class ;
+    rdfs:subClassOf :Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+    
+:Action_Type a owl:Class ;
+    rdfs:subClassOf :Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Translation_Action a owl:Class ;
+    rdfs:subClassOf :Action ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Digital_Object a owl:Class ;
+    rdfs:subClassOf :Immaterial_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Expression a owl:Class ;
+    rdfs:subClassOf :Immaterial_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Bitstring_Type a owl:Class ;
+    rdfs:subClassOf :Object_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Translation_Action_Type a owl:Class ;
+    rdfs:subClassOf :Action_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Data_File a owl:Class ;
+    rdfs:subClassOf :Bitstring_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Program_File a owl:Class ;
+    rdfs:subClassOf :Bitstring_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Site a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:post a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:comment a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:profileAccount a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:commenting a :Translation_Action_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:posting a :Translation_Action_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
