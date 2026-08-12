@@ -1,0 +1,109 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/golem/ontology/response#> .
+@prefix rd: <https://w3id.org/golem/ontology/response/data#> .
+@prefix schema: <https://schema.org/> .
+
+rd: a owl:Ontology ;
+    owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/02/modelet_TBox.ttl> .
+
+rd:comment_expression_1 a r:Expression ;
+    r:created_by rd:r_u4 ;
+    r:has_bearer rd:r_c4 ;
+    r:has_value "Agreed. These sorts of sudden tone-shifts to make an impactful finale for an otherwise light-hearted SoL anime are way overdone and are just not what I'm watching for." ;
+    r:translated_by rd:commenting_action_1 .
+
+rd:comment_expression_2 a r:Expression ;
+    r:created_by rd:ao3_u1 ;
+    r:has_bearer rd:ao3_c2 ;
+    r:has_value "The buffet of writers logic 🥹" ;
+    r:translated_by rd:commenting_action_2 .
+
+rd:post_expression_1 a r:Expression ;
+    r:created_by rd:r_u1 ;
+    r:has_bearer rd:r_p1 ;
+    r:has_value "Hi! Welcome to another edition of the weekly Thursday Anime Discussion Thread, featuring us, the r/anime Writing Club. We simulwatch anime TV series and movies together once a month, so check us out if you'd like to participate. Our thoughts on the series, as always, are covered below. :)..." ;
+    r:translated_by rd:posting_action_1 .
+
+rd:post_expression_2 a r:Expression ;
+    r:created_by rd:ao3_u1 ;
+    r:has_bearer rd:ao3_p2 ;
+    r:has_value "Hi guys, wow. I'm bringing this story back, its been awhile I know, but i asked if someone wanted me to finish it and they said yes!" ;
+    r:translated_by rd:posting_action_2 .
+
+rd:AnimeMod a r:Digital_Object ;
+    schema:name "AnimeMod" ;
+    r:has_bearer rd:Reddit ;
+    r:has_type r:profileAccount .
+
+rd:JurassicWorldfan555 a r:Digital_Object ;
+    schema:name "JurassicWorldfan555" ;
+    r:has_bearer rd:Ao3 ;
+    r:has_type r:profileAccount .
+
+rd:baquea a r:Digital_Object ;
+    schema:name "baquea" ;
+    r:has_bearer rd:Reddit ;
+    r:has_type r:profileAccount .
+
+rd:commenting_action_1 a r:Translation_Action ;
+    r:has_type r:commenting ;
+    r:performed_by rd:r_u4 ;
+    r:results_in rd:r_c4 .
+
+rd:commenting_action_2 a r:Translation_Action ;
+    r:has_type r:commenting ;
+    r:performed_by rd:ao3_u1 ;
+    r:results_in rd:ao3_c2 .
+
+rd:posting_action_1 a r:Translation_Action ;
+    r:has_type r:posting ;
+    r:performed_by rd:r_u1 ;
+    r:results_in rd:r_p1 .
+
+rd:posting_action_2 a r:Translation_Action ;
+    r:has_type r:posting ;
+    r:performed_by rd:ao3_u1 ;
+    r:results_in rd:ao3_p2 .
+
+rd:ao3_c2 a r:Bearer,
+        r:Digital_Object ;
+    r:has_bearer rd:Ao3 ;
+    r:has_type r:comment .
+
+rd:ao3_p2 a r:Bearer,
+        r:Digital_Object ;
+    dcterms:title "Peeps Aren't Even Good (But its back!)" ;
+    r:has_bearer rd:Ao3 ;
+    r:has_type r:post .
+
+rd:r_c4 a r:Bearer,
+        r:Digital_Object ;
+    r:has_bearer rd:Reddit ;
+    r:has_type r:comment .
+
+rd:r_p1 a r:Bearer,
+        r:Digital_Object ;
+    dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
+    r:has_bearer rd:Reddit ;
+    r:has_type r:post .
+
+rd:r_u1 a r:User ;
+    r:has_account rd:AnimeMod .
+
+rd:r_u4 a r:User ;
+    r:has_account rd:baquea .
+
+rd:Ao3 a r:Bearer,
+        r:Digital_Object ;
+    schema:name "Ao3" ;
+    r:has_type r:site .
+
+rd:Reddit a r:Bearer,
+        r:Digital_Object ;
+    schema:name "Reddit" ;
+    r:has_type r:site .
+
+rd:ao3_u1 a r:User ;
+    r:has_account rd:JurassicWorldfan555 .
+

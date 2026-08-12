@@ -52,6 +52,11 @@
     ] ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
+:has_value a owl:DataProperty ;
+    rdfs:domain :Object ;
+    rdfs:range xsd:String ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
 :Object a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
@@ -112,7 +117,7 @@
     rdfs:subClassOf :Bitstring_Type ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
-:Site a :Data_File ;
+:site a :Data_File ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :post a :Data_File ;
