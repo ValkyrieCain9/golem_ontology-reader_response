@@ -1,0 +1,122 @@
+@prefix : <https://w3id.org/golem/ontology/response#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix golem: <https://w3id.org/golem/ontology#> .
+@prefix crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> .
+@prefix lrmoo: <https://cidoc-crm.org/extensions/lrmoo/owl/> .
+
+# direct imports to run with reasoner
+
+<https://w3id.org/golem/ontology/response#> a owl:Ontology ;
+    owl:imports <http://erlangen-crm.org/240307/> ,
+                <https://cidoc-crm.org/extensions/lrmoo/owl/> ,
+                <http://www.cidoc-crm.org/extensions/crmdig/> .
+
+# importing golem ttl
+
+# <https://w3id.org/golem/ontology/response#> a owl:Ontology ;
+#     owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem.ttl> ,
+#                 <http://www.cidoc-crm.org/extensions/crmdig/> .
+
+#Object Properties
+
+crmdig:L19_stores a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P128_carries ;
+    owl:inverseOf crmdig:L19i_is_stored_on ;
+    rdfs:domain crmdig:D13_Digital_Information_Carrier ;
+    rdfs:range crmdig:D1_Digital_Object ;
+    rdfs:label "stores"@en ;
+    rdfs:comment "This property associates an instance of a D13 Digital Information Carrier with the instance of Digital Object that is stored on it." .
+
+crmdig:L19i_is_stored_on a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P128i_is_carried_by ;
+    owl:inverseOf crmdig:L19_stores ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range crmdig:D13_Digital_Information_Carrier ;
+    rdfs:label "is stored on"@en .
+
+crmdig:L11_had_output a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P94_has_created ;
+    owl:inverseOf crmdig:L11i_was_output_of ;
+    rdfs:domain crmdig:D7_Digital_Machine_Event ;
+    rdfs:range crmdig:D1_Digital_Object ;
+    rdfs:label "had output"@en ;
+    rdfs:comment "This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the output of the activity." .
+
+crmdig:L11i_was_output_of a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P94i_was_created_by ;
+    owl:inverseOf crmdig:L11_had_output ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range crmdig:D7_Digital_Machine_Event ;
+    rdfs:label "was output of"@en .
+
+# Classes
+
+crmdig:D1_Digital_Object a owl:Class ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:label "Digital Object"@en ;
+    rdfs:comment "This class comprises identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. Any change in the bit sequence results in a new instance of D1 Digital Object. Any aggregation of instances of D1 Digital Object into a whole treated as a single unit is also regarded as an instance of D1 Digital Object. This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of D1 Digital Object, mutually related by the P106 is composed of (forms part of) property. In the case of embedded metadata, the documentalist must take care to distinguish the identity of the object including the metadata from the identity of the included content described by the metadata. A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously." .
+
+crmdig:D7_Digital_Machine_Event a owl:Class ;
+    rdfs:subClassOf crm:E65_Creation ;
+    rdfs:label "Digital Machine Event" ;
+    rdfs:comment "This class comprises events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. Some D7 Digital Machine Events may form part of a wider E65 Creation event. In this case, all machine output of the partial events is regarded as creation of the overall activity." .
+
+crmdig:D13_Digital_Information_Carrier a owl:Class ;
+    rdfs:subClassOf <http://erlangen-crm.org/240307/E22_Human-Made_Object> ;
+    rdfs:label "Digital Information Carrier" ;
+    rdfs:comment "This class comprises all instances of E84 Information Carrier that are explicitly designed to be used as persistent digital physical carriers of instances of D1 Digital Object. An instance of D13 Digital Information Carrier may or may not contain information, e.g., an empty diskette." .
+
+lrmoo:F2_Expression rdfs:subClassOf crm:E73_Information_Object .
+
+:User a owl:Class ;
+    rdfs:subClassOf crm:E39_Actor ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Immaterial_Information_Carrier a owl:Class ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Object_Type a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+    
+:Action_Type a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Bitstring_Type a owl:Class ;
+    rdfs:subClassOf :Object_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Translation_Action_Type a owl:Class ;
+    rdfs:subClassOf :Action_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Data_File a owl:Class ;
+    rdfs:subClassOf :Bitstring_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:Program_File a owl:Class ;
+    rdfs:subClassOf :Bitstring_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:site a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:post a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:comment a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:user_account a :Data_File ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:commenting a :Translation_Action_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:posting a :Translation_Action_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .

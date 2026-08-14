@@ -1,0 +1,112 @@
+@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lrmoo: <https://cidoc-crm.org/extensions/lrmoo/owl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/golem/ontology/response#> .
+@prefix rd: <https://w3id.org/golem/ontology/response/data#> .
+@prefix schema: <https://schema.org/> .
+
+rd: a owl:Ontology ;
+    owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/02/it2_Tbox.ttl> .
+
+rd:AnimeMod a crmdig:D1_Digital_Object ;
+    crm:P105_right_held_by rd:r_u1 ;
+    crm:P130i_features_are_also_found_on rd:Reddit ;
+    crm:P2_has_type r:profileAccount ;
+    schema:name "AnimeMod" .
+
+rd:JurassicWorldfan555 a crmdig:D1_Digital_Object ;
+    crm:P105_right_held_by rd:ao3_u1 ;
+    crm:P130i_features_are_also_found_on rd:Ao3 ;
+    crm:P2_has_type r:profileAccount ;
+    schema:name "JurassicWorldfan555" .
+
+rd:baquea a crmdig:D1_Digital_Object ;
+    crm:P105_right_held_by rd:r_u4 ;
+    crm:P130i_features_are_also_found_on rd:Reddit ;
+    crm:P2_has_type r:profileAccount ;
+    schema:name "baquea" .
+
+rd:commenting_action_1 a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:r_u4 ;
+    crm:P17_was_motivated_by rd:comment_expression_1 ;
+    crm:P2_has_type r:commenting ;
+    crmdig:L11_had_output rd:r_c4 .
+
+rd:commenting_action_2 a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:ao3_u1 ;
+    crm:P17_was_motivated_by rd:comment_expression_2 ;
+    crm:P2_has_type r:commenting ;
+    crmdig:L11_had_output rd:ao3_c2 .
+
+rd:posting_action_1 a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:r_u1 ;
+    crm:P17_was_motivated_by rd:post_expression_1 ;
+    crm:P2_has_type r:posting ;
+    crmdig:L11_had_output rd:r_p1 .
+
+rd:posting_action_2 a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:ao3_u1 ;
+    crm:P17_was_motivated_by rd:post_expression_2 ;
+    crm:P2_has_type r:posting ;
+    crmdig:L11_had_output rd:ao3_p2 .
+
+rd:comment_expression_1 a lrmoo:F2_Expression ;
+    crm:P105_right_held_by rd:r_u4 ;
+    crm:P130i_features_are_also_found_on rd:r_c4 ;
+    crm:P190_has_symbolic_content "Agreed. These sorts of sudden tone-shifts to make an impactful finale for an otherwise light-hearted SoL anime are way overdone and are just not what I'm watching for." .
+
+rd:comment_expression_2 a lrmoo:F2_Expression ;
+    crm:P105_right_held_by rd:ao3_u1 ;
+    crm:P130i_features_are_also_found_on rd:ao3_c2 ;
+    crm:P190_has_symbolic_content "The buffet of writers logic 🥹" .
+
+rd:post_expression_1 a lrmoo:F2_Expression ;
+    crm:P105_right_held_by rd:r_u1 ;
+    crm:P130i_features_are_also_found_on rd:r_p1 ;
+    crm:P190_has_symbolic_content "Hi! Welcome to another edition of the weekly Thursday Anime Discussion Thread, featuring us, the r/anime Writing Club. We simulwatch anime TV series and movies together once a month, so check us out if you'd like to participate. Our thoughts on the series, as always, are covered below. :)..." .
+
+rd:post_expression_2 a lrmoo:F2_Expression ;
+    crm:P105_right_held_by rd:ao3_u1 ;
+    crm:P130i_features_are_also_found_on rd:ao3_p2 ;
+    crm:P190_has_symbolic_content "Hi guys, wow. I'm bringing this story back, its been awhile I know, but i asked if someone wanted me to finish it and they said yes!" .
+
+rd:ao3_c2 a crmdig:D1_Digital_Object,
+        r:Immaterial_Information_Carrier ;
+    crm:P130i_features_are_also_found_on rd:Ao3 ;
+    crm:P2_has_type r:comment .
+
+rd:ao3_p2 a crmdig:D1_Digital_Object,
+        r:Immaterial_Information_Carrier ;
+    crm:P130i_features_are_also_found_on rd:Ao3 ;
+    crm:P2_has_type r:post ;
+    dcterms:title "Peeps Aren't Even Good (But its back!)" .
+
+rd:r_c4 a crmdig:D1_Digital_Object,
+        r:Immaterial_Information_Carrier ;
+    crm:P130i_features_are_also_found_on rd:Reddit ;
+    crm:P2_has_type r:comment .
+
+rd:r_p1 a crmdig:D1_Digital_Object,
+        r:Immaterial_Information_Carrier ;
+    crm:P130i_features_are_also_found_on rd:Reddit ;
+    crm:P2_has_type r:post ;
+    dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" .
+
+rd:Ao3 a crmdig:D1_Digital_Object,
+        r:Immaterial_Information_Carrier ;
+    crm:P2_has_type r:site ;
+    schema:name "Ao3" .
+
+rd:r_u1 a r:User .
+
+rd:r_u4 a r:User .
+
+rd:Reddit a crmdig:D1_Digital_Object,
+        r:Immaterial_Information_Carrier ;
+    crm:P2_has_type r:site ;
+    schema:name "Reddit" .
+
+rd:ao3_u1 a r:User .
+
