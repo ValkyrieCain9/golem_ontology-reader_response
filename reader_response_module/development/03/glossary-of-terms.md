@@ -26,10 +26,12 @@
 | `Nested Thread` | A thread which has as its parent a top-level comment, containing all the nested comments under a single top-level comment |
 | `Deep-Nested Thread` | A thread which has as its parent a nested comment, containing all the deep-nested comments under a single nested comment |
 | `Degree` | Describes sentiment of a discourse act, either positive or negative. Unlike discourse acts like `Appreciation` which has an implicit positive degree, this can be assigned to discourse acts without an implicit degree like `Evaluation` |
+| `Actor` | The one to create a discourse act or expression |
 | `has type` | Assigns a discourse act to its specific type (e.g. `Suggestion`, `Statement`, `Humour`) |
 | `has theme` | Assigns a discourse act to particular discourse act theme |
 | `has degree` | Assigns a discourse act to a positive or negative degree |
 | `responds to` | Connects a discourse act to the discourse act (comment or post) that it is responding to |
-| `has role` | Assigns an actor (user) with a particular role |
+| `has role` | Assigns an actor with a particular role |
 | `has subject` | Describes the main subject of a discourse act (what it is about) this could be any form of expression, including another discourse act |
 | `has parent` | Connects a thread to the discourse act (comment) which it stems from |
+| `created` | Connects a discourse act or creative expression to the actor who created it |
