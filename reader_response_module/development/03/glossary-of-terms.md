@@ -25,7 +25,7 @@
 | `Top-Level Comment Thread` | A thread made of all the top-level comments under a post |
 | `Nested Thread` | A thread which has as its parent a top-level comment, containing all the nested comments under a single top-level comment |
 | `Deep-Nested Thread` | A thread which has as its parent a nested comment, containing all the deep-nested comments under a single nested comment |
-| `Degree` | Describes sentiment of a discourse act, either positive or negative. Unlike discourse acts like `Appreciation` which has an implicit positive degree, this can be assigned to discourse acts without an implicit degree like `Evaluation` |
+| `Sentiment` | Describes sentiment of a discourse act, either positive or negative. Unlike discourse acts like `Appreciation` which has an implicit positive degree, this can be assigned to discourse acts without an implicit degree like `Evaluation` |
 | `Actor` | The one to create a discourse act or expression |
 | `has type` | Assigns a discourse act to its specific type (e.g. `Suggestion`, `Statement`, `Humour`) |
 | `has theme` | Assigns a discourse act to particular discourse act theme |
