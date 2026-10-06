@@ -1,0 +1,152 @@
+@prefix : <https://w3id.org/golem/ontology/response#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/golem/ontology/response#> a owl:Ontology .
+
+:has_type a owl:ObjectProperty ;
+    rdfs:domain :Discourse_Act ;
+    rdfs:range :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_theme a owl:ObjectProperty ;
+    rdfs:domain :Discourse_Act ;
+    rdfs:range :Discourse_Act_Theme ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_sentiment a owl:ObjectProperty ;
+    rdfs:domain :Discourse_Act ;
+    rdfs:range :Sentiment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:responds_to a owl:ObjectProperty ;
+    rdfs:domain :Discourse_Act ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:Discourse_Act :Expression)
+    ] ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_subject a owl:ObjectProperty ;
+    rdfs:domain :Discourse_Act ;
+    rdfs:range :Expression ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_role a owl:ObjectProperty ;
+    rdfs:domain :Actor ;
+    rdfs:range :Actor_Role ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_parent a owl:ObjectProperty ;
+    rdfs:domain :Thread ;
+    rdfs:range :Discourse_Act ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:created a owl:ObjectProperty ;
+    rdfs:domain :Actor ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:Discourse_Act :Expression)
+    ] ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:part_of a owl:ObjectProperty ;
+    rdfs:domain :Discourse_Act ;
+    rdfs:range :Discourse_Structure ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Discourse_Act a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+    
+:Discourse_Act_Theme a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Discourse_Act_Type a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Discourse_Structure a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Actor a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Actor_Role a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Expression a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Sentiment a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Textual_Material a owl:Class ;
+    rdfs:subClassOf :Discourse_Act_Theme ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Individual_Experience a owl:Class ;
+    rdfs:subClassOf :Discourse_Act_Theme ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Social_Impact a owl:Class ;
+    rdfs:subClassOf :Discourse_Act_Theme ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Thread a owl:Class ;
+    rdfs:subClassOf :Discourse_Structure ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Post_Thread a owl:Class ;
+    rdfs:subClassOf :Thread ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:TopLevel_Comment_Thread a owl:Class ;
+    rdfs:subClassOf :Thread ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:Nested_Thread a owl:Class ;
+    rdfs:subClassOf :Thread ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:DeepNested_Thread a owl:Class ;
+    rdfs:subClassOf :Thread ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:positive a :Sentiment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:negative a :Sentiment ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:statement a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:question a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:answer a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:agreement a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:disagreement a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:appreciation a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:negativeReaction a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:elaboration a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:humour a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:evaluation a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:suggestion a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
