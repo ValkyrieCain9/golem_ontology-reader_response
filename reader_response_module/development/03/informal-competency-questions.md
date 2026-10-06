@@ -55,13 +55,13 @@ CQ_3.3
 What type of users are involved in a discourse chain on AO3?
 
 ### Expected Outcome
-A list of users, their roles, and their accociated discourse acts
+A list of actors, their roles, and their accociated discourse acts
 
 ### Result Sample
-* `user_1` has role `author`
-* `user_1` created `Forever Girl`
-* `user_2` has role `reader`
-* `user_2` created `comment_1`
+* `actor_1` has role `author`
+* `actor_1` created `Forever Girl`
+* `actor_2` has role `reader`
+* `actor_2` created `comment_1`
 * `comment_1` is a `Discourse_Act`
 * `comment_1` has type `Appreciation`
 * `comment_1` has subject `Forever Girl`
