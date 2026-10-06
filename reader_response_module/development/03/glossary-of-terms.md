@@ -29,7 +29,7 @@
 | `Actor` | The one to create a discourse act or expression |
 | `has type` | Assigns a discourse act to its specific type (e.g. `Suggestion`, `Statement`, `Humour`) |
 | `has theme` | Assigns a discourse act to particular discourse act theme |
-| `has degree` | Assigns a discourse act to a positive or negative degree |
+| `has sentiment` | Assigns a discourse act to a positive or negative degree |
 | `responds to` | Connects a discourse act to the discourse act (comment or post) that it is responding to |
 | `has role` | Assigns an actor with a particular role |
 | `has subject` | Describes the main subject of a discourse act (what it is about) this could be any form of expression, including another discourse act |
