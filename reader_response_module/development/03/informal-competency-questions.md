@@ -27,10 +27,10 @@ Example 1
 CQ_3.2
 
 ### Question
-Which are the different discourse acts, their theme and degree, which make up an evaluation act on GoodReads?
+Which are the different discourse acts, their theme and sentiment, which make up an evaluation act on GoodReads?
 
 ### Expected outcome
-A list of discourse acts, their theme and degree, which are part of a review on GoodReads with an evaluation act type
+A list of discourse acts, their theme and sentiment, which are part of a review on GoodReads with an evaluation act type
 
 ### Result Sample
 * `review_1` is a `Discourse_Act`
@@ -39,7 +39,7 @@ A list of discourse acts, their theme and degree, which are part of a review on 
 * `clause_1` is part of `review_1`
 * `clause_1` has type `evaluation`
 * `clause_1` has theme `individual_experience`
-* `clause_1` has degree `negative`
+* `clause_1` has sentiment `negative`
 
 ### Based on 
 Example 1
