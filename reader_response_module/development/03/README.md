@@ -26,7 +26,7 @@ With this discourse relations can be identified both at the individual instances
 
 <img width="1112" height="533" alt="Screenshot 2026-09-20 at 17 25 11" src="https://github.com/user-attachments/assets/540c0abb-15b9-4fc6-9627-d39e26142a00" />
 
-As Goodreads is primary a platform for leaving reviews about books, the reviews can be generally categorised as evaluation acts. Here each evaluation act can be further broken down into smaller clauses, each their own evaluation act (or possibly also statement and elaboration pairs) with a specific creative discourse theme as described by Rebora and Vezzani (2024). Each of these smaller acts can also be assigned a degree of positive or negative, with the overall review being a positive evaluation.
+As Goodreads is primary a platform for leaving reviews about books, the reviews can be generally categorised as evaluation acts. Here each evaluation act can be further broken down into smaller clauses, each their own evaluation act (or possibly also statement and elaboration pairs) with a specific creative discourse theme as described by Rebora and Vezzani (2024). Each of these smaller acts can also be assigned a sentiment of positive or negative, with the overall review being a positive evaluation.
 
 “However, some of the military conflict sections significantly slowed it down for me.” - Individual experience, negative
 
