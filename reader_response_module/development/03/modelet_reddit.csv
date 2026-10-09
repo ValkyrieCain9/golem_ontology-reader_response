@@ -1,0 +1,7 @@
+comment_id,comment_content,comment_type,comment_subject,comment_actor,comment_responds_to,thread_id,thread_type
+RedditComment1,I almost didn't realize this was about O Maidens In Your Savage Season because of r/anime's insistence on using the japanese titles,statememt,O Maidens in Your Savage Season (anime),RedditUser1,redditAnimeDiscussion,Thread1,TopLevel_Comment_Thread
+RedditComment2,Yeah they should at least put the English title in parenthesis somewhere in the post. I flipflop between Japanese and English titles based on how easy it is to say so having both would be nice lol.,agreement,O Maidens in Your Savage Season (anime),RedditUser2,RedditComment1,Thread2,Nested_Thread
+RedditComment3,You didn’t recognize it from the banger OP?,statement,O Maidens in Your Savage Season (anime),RedditUser3,RedditComment1,Thread2,Nested_Thread
+RedditComment4,"The ED was a banger as well, maybe even better than the OP.",agreement,O Maidens in Your Savage Season (anime),RedditUser4,RedditComment3,Thread3,DeepNested_Thread
+RedditComment5,Nakayubi tatero~♪,elaboration,O Maidens in Your Savage Season (anime),RedditUser5,RedditComment3,Thread3,DeepNested_Thread
+RedditComment6,Just learn japanese bro it's only 5 years till fluency,humour,O Maidens in Your Savage Season (anime),RedditUser6,RedditComment1,Thread2,Nested_Thread

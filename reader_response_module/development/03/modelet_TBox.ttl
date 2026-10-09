@@ -53,7 +53,18 @@
 
 :part_of a owl:ObjectProperty ;
     rdfs:domain :Discourse_Act ;
-    rdfs:range :Discourse_Structure ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf (:Discourse_Act :Discourse_Structure)
+    ] ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
+:has_value a owl:DataProperty ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (:Discourse_Act :Expression)
+    ] ;
+    rdfs:range xsd:String ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :Discourse_Act a owl:Class ;
@@ -149,4 +160,19 @@
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :suggestion a :Discourse_Act_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:textualMaterial a :Textual_Material ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:individualExperience a :Individual_Experience ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:socialImpact a :Social_Impact ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:author a :Actor_Role ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:reader a :Actor_Role ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .

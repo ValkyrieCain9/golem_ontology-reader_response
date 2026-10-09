@@ -1,0 +1,225 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/golem/ontology/response#> .
+@prefix rd: <https://w3id.org/golem/ontology/response/data#> .
+
+rd: a owl:Ontology ;
+    owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/03/modelet_TBox.ttl> .
+
+rd:Ao3Clause1 a r:Discourse_Act ;
+    r:has_theme r:individualExperience ;
+    r:has_type r:appreciation ;
+    r:has_value "ohm y god im so excited WE NEED MOREEEEE." ;
+    r:part_of rd:Ao3Comment1 .
+
+rd:Ao3Clause2 a r:Discourse_Act ;
+    r:has_theme r:textualMaterial ;
+    r:has_type r:appreciation ;
+    r:has_value "the air tickling the back of her neck oh aang.... do that more please thank you." ;
+    r:part_of rd:Ao3Comment1 .
+
+rd:Ao3Clause5 a r:Discourse_Act ;
+    r:has_sentiment r:positive ;
+    r:has_type r:statement ;
+    r:has_value "More coming soon!!" ;
+    r:part_of rd:Ao3Comment2 ;
+    r:responds_to rd:Ao3Clause4 .
+
+rd:Ao3Clause6 a r:Discourse_Act ;
+    r:has_sentiment r:positive ;
+    r:has_type r:answer ;
+    r:has_value "And thank you for finding that and letting me know 🥹🥹 I fixed it." ;
+    r:part_of rd:Ao3Comment2 ;
+    r:responds_to rd:Ao3Clause3 .
+
+rd:Ao3User1 a r:Actor ;
+    r:created rd:Ao3Comment1 ;
+    r:has_role r:reader .
+
+rd:Ao3User2 a r:Actor ;
+    r:created rd:Ao3Comment2 ;
+    r:has_role r:author .
+
+rd:GRClause1 a r:Discourse_Act ;
+    r:has_sentiment r:positive ;
+    r:has_theme r:socialImpact ;
+    r:has_type rd:evaluation ;
+    r:has_value "This was a great book, definitely one of the more unique 40k entries." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause2 a r:Discourse_Act ;
+    r:has_sentiment r:positive ;
+    r:has_theme r:textualMaterial ;
+    r:has_type rd:evaluation ;
+    r:has_value "In it, I found humour, pathos, tension and catharsis." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause3 a r:Discourse_Act ;
+    r:has_sentiment r:negative ;
+    r:has_theme r:individualExperience ;
+    r:has_type rd:evaluation ;
+    r:has_value "However, some of the military conflict sections significantly slowed it down for me." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause4 a r:Discourse_Act ;
+    r:has_theme r:textualMaterial ;
+    r:has_type rd:statement ;
+    r:has_value "The driver of this novel is the relationship between Trazyn the Infinite and Orikan the Diviner." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause5 a r:Discourse_Act ;
+    r:has_sentiment r:positive ;
+    r:has_theme r:individualExperience ;
+    r:has_type rd:evaluation ;
+    r:has_value "The scenes in which they converse are by far the most compelling, and I think I was a little disappointed that we didn't get more of them (despite them taking up perhaps half of the novel)." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause6 a r:Discourse_Act ;
+    r:has_type rd:statement ;
+    r:has_value "I don't think it's prudent or advisable to give a history of the Necron race for context in this review." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause7 a r:Discourse_Act ;
+    r:has_sentiment r:positive ;
+    r:has_theme r:socialImpact ;
+    r:has_type rd:evaluation ;
+    r:has_value "If you are interested in Necrons, this is possibly the best work of fiction you could ask for that explores their nature." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause8 a r:Discourse_Act ;
+    r:has_sentiment r:negative ;
+    r:has_theme r:socialImpact ;
+    r:has_type rd:disagreement ;
+    r:has_value "I've seen people say this stands alone as a good sci-fi novel, but I'm not sure that it would." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:GRClause9 a r:Discourse_Act ;
+    r:has_type rd:statement ;
+    r:has_value "I might give it to my dad to read and see if he is able to follow it - it would be an interesting experiment." ;
+    r:part_of rd:GoodReadsReview .
+
+rd:RedditUser1 a r:Actor ;
+    r:created rd:RedditComment1 .
+
+rd:RedditUser2 a r:Actor ;
+    r:created rd:RedditComment2 .
+
+rd:RedditUser3 a r:Actor ;
+    r:created rd:RedditComment3 .
+
+rd:RedditUser4 a r:Actor ;
+    r:created rd:RedditComment4 .
+
+rd:RedditUser5 a r:Actor ;
+    r:created rd:RedditComment5 .
+
+rd:RedditUser6 a r:Actor ;
+    r:created rd:RedditComment6 .
+
+rd:goodreadsUser a r:Actor ;
+    r:created rd:GoodReadsReview .
+
+rd:Ao3Clause3 a r:Discourse_Act ;
+    r:has_theme r:textualMaterial ;
+    r:has_type r:suggestion ;
+    r:has_value """also, i hope you don't mind my remark, but i noticed a tiny tiny typo you might've missed "...he murmured against her ear, “I missed you yoo.”"
+
+the yoo thingy. just thought i'd tell you!""" ;
+    r:part_of rd:Ao3Comment1 .
+
+rd:Ao3Clause4 a r:Discourse_Act ;
+    r:has_theme r:individualExperience ;
+    r:has_type r:appreciation ;
+    r:has_value "ANYWAYS THANK YOU FOR THE FOOD we are all starving for more >:)" ;
+    r:part_of rd:Ao3Comment1 .
+
+rd:ForeverGirl_Chapter1 a r:Expression ;
+    dcterms:title "Breathless" .
+
+rd:RedditComment2 a r:Discourse_Act ;
+    r:has_subject rd:anime ;
+    r:has_type r:agreement ;
+    r:has_value "Yeah they should at least put the English title in parenthesis somewhere in the post. I flipflop between Japanese and English titles based on how easy it is to say so having both would be nice lol." ;
+    r:part_of rd:Thread2 ;
+    r:responds_to rd:RedditComment1 .
+
+rd:RedditComment4 a r:Discourse_Act ;
+    r:has_subject rd:anime ;
+    r:has_type r:agreement ;
+    r:has_value "The ED was a banger as well, maybe even better than the OP." ;
+    r:part_of rd:Thread3 ;
+    r:responds_to rd:RedditComment3 .
+
+rd:RedditComment5 a r:Discourse_Act ;
+    r:has_subject rd:anime ;
+    r:has_type r:elaboration ;
+    r:has_value "Nakayubi tatero~♪" ;
+    r:part_of rd:Thread3 ;
+    r:responds_to rd:RedditComment3 .
+
+rd:RedditComment6 a r:Discourse_Act ;
+    r:has_subject rd:anime ;
+    r:has_type r:humour ;
+    r:has_value "Just learn japanese bro it's only 5 years till fluency" ;
+    r:part_of rd:Thread2 ;
+    r:responds_to rd:RedditComment1 .
+
+rd:Thread1 a r:TopLevel_Comment_Thread .
+
+rd:goodReadsBook a r:Expression ;
+    dcterms:title "The Infinite and the Divine" .
+
+rd:redditAnimeDiscussion a r:Expression ;
+    dcterms:title "Araburu Kisetsu no Otome-domo yo. - Thursday Anime Discussion Thread (ft. /r/anime Writing Club)" .
+
+rd:Thread3 a r:DeepNested_Thread .
+
+rd:ao3Fanfic a r:Expression ;
+    dcterms:title "Forever Girl (ATLA fanfic)",
+        "O Maidens in Your Savage Season (anime)" .
+
+rd:Ao3Comment2 a r:Discourse_Act ;
+    r:has_subject rd:ao3Fanfic ;
+    r:has_type r:appreciation ;
+    r:has_value """More coming soon!!
+
+And thank you for finding that and letting me know 🥹🥹 I fixed it.""" ;
+    r:responds_to rd:Ao3Comment1 .
+
+rd:RedditComment3 a r:Discourse_Act ;
+    r:has_subject rd:anime ;
+    r:has_type r:statement ;
+    r:has_value "You didn’t recognize it from the banger OP?" ;
+    r:part_of rd:Thread2 ;
+    r:responds_to rd:RedditComment1 .
+
+rd:Thread2 a r:Nested_Thread .
+
+rd:RedditComment1 a r:Discourse_Act ;
+    r:has_subject rd:anime ;
+    r:has_type r:statememt ;
+    r:has_value "I almost didn't realize this was about O Maidens In Your Savage Season because of r/anime's insistence on using the japanese titles" ;
+    r:part_of rd:Thread1 ;
+    r:responds_to rd:redditAnimeDiscussion .
+
+rd:Ao3Comment1 a r:Discourse_Act ;
+    r:has_subject rd:ao3Fanfic ;
+    r:has_type r:appreciation ;
+    r:has_value """ohm y god im so excited WE NEED MOREEEEE. the air tickling the back of her neck oh aang.... do that more please thank you.
+
+also, i hope you don't mind my remark, but i noticed a tiny tiny typo you might've missed "...he murmured against her ear, “I missed you yoo.”"
+
+the yoo thingy. just thought i'd tell you! ANYWAYS THANK YOU FOR THE FOOD we are all starving for more >:)""" ;
+    r:responds_to rd:ForeverGirl_Chapter1 .
+
+rd:GoodReadsReview a r:Discourse_Act ;
+    r:has_subject rd:goodReadsBook ;
+    r:has_type r:evaluation ;
+    r:has_value """This was a great book, definitely one of the more unique 40k entries. In it, I found humour, pathos, tension and catharsis. However, some of the military conflict sections significantly slowed it down for me.
+
+The driver of this novel is the relationship between Trazyn the Infinite and Orikan the Diviner. The scenes in which they converse are by far the most compelling, and I think I was a little disappointed that we didn't get more of them (despite them taking up perhaps half of the novel).
+
+I don't think it's prudent or advisable to give a history of the Necron race for context in this review. If you are interested in Necrons, this is possibly the best work of fiction you could ask for that explores their nature.
+
+I've seen people say this stands alone as a good sci-fi novel, but I'm not sure that it would. I might give it to my dad to read and see if he is able to follow it - it would be an interesting experiment.""" .
+
