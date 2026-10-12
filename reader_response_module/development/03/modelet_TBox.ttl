@@ -59,6 +59,11 @@
     ] ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
+:has_threadType a owl:ObjectProperty ;
+    rdfs:domain :Thread ;
+    rdfs:range :Thread_Type ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
 :has_value a owl:DataProperty ;
     rdfs:domain [
         a owl:Class ;
@@ -91,6 +96,9 @@
 :Sentiment a owl:Class ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
+:Thread_Type a owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
+
 :Textual_Material a owl:Class ;
     rdfs:subClassOf :Discourse_Act_Theme ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
@@ -107,20 +115,16 @@
     rdfs:subClassOf :Discourse_Structure ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
-:Post_Thread a owl:Class ;
-    rdfs:subClassOf :Thread ;
+:postThread a :Thread_Type ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
-:TopLevel_Comment_Thread a owl:Class ;
-    rdfs:subClassOf :Thread ;
+:topLevelCommentThread a :Thread_Type ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
-:Nested_Thread a owl:Class ;
-    rdfs:subClassOf :Thread ;
+:nestedThread a :Thread_Type ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
-:DeepNested_Thread a owl:Class ;
-    rdfs:subClassOf :Thread ;
+:deepNestedThread a :Thread_Type ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :positive a :Sentiment ;

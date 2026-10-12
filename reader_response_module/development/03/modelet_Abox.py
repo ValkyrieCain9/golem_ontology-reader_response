@@ -25,6 +25,7 @@ g.add((
 DISCOURSE_ACT = RESPONSE_ONT.Discourse_Act
 EXPRESSION = RESPONSE_ONT.Expression
 ACTOR = RESPONSE_ONT.Actor
+THREAD = RESPONSE_ONT.Thread
 
 # read the csv
 # change path to new data modelet
@@ -55,7 +56,7 @@ with open("reader_response_module/development/03/modelet_goodreads.csv", newline
         clause_uri = RESPONSE_DATA[row["clause_id"].strip()]
         g.add((clause_uri, RDF.type, DISCOURSE_ACT))
         g.add((clause_uri, RESPONSE_ONT.has_value, Literal(row["clause_content"].strip())))
-        g.add((clause_uri, RESPONSE_ONT.has_type, RESPONSE_DATA[row["clause_type"].strip()]))
+        g.add((clause_uri, RESPONSE_ONT.has_type, RESPONSE_ONT[row["clause_type"].strip()]))
         if row["clause_theme"]:
             g.add((clause_uri, RESPONSE_ONT.has_theme, RESPONSE_ONT[row["clause_theme"].strip()]))
         if row["clause_sentiment"]:
@@ -76,6 +77,7 @@ with open("reader_response_module/development/03/modelet_ao3.csv", newline='', e
         exp_uri = RESPONSE_DATA["ao3Fanfic"]
         g.add((exp_uri, RDF.type, EXPRESSION))
         g.add((exp_uri, DCTERMS.title, Literal(row["comment_subject"].strip())))
+        g.add((RESPONSE_DATA[row["subject_actor"].strip()], RESPONSE_ONT.created, exp_uri))
 
         post_exp_uri = RESPONSE_DATA["ForeverGirl_Chapter1"]
         g.add((post_exp_uri, RDF.type, EXPRESSION))
@@ -118,12 +120,13 @@ with open("reader_response_module/development/03/modelet_reddit.csv", newline=''
         g.add((post_exp_uri, DCTERMS.title, Literal("Araburu Kisetsu no Otome-domo yo. - Thursday Anime Discussion Thread (ft. /r/anime Writing Club)")))
 
         anime_exp_uri = RESPONSE_DATA["anime"]
-        g.add((exp_uri, RDF.type, EXPRESSION))
-        g.add((exp_uri, DCTERMS.title, Literal(row["comment_subject"].strip())))
+        g.add((anime_exp_uri, RDF.type, EXPRESSION))
+        g.add((anime_exp_uri, DCTERMS.title, Literal(row["comment_subject"].strip())))
 
         #thread
         thread_uri = RESPONSE_DATA[row["thread_id"].strip()]
-        g.add((thread_uri, RDF.type, RESPONSE_ONT[row["thread_type"].strip()]))
+        g.add((thread_uri, RDF.type, THREAD))
+        g.add((thread_uri, RESPONSE_ONT.has_threadType, RESPONSE_ONT[row["thread_type"].strip()]))
 
         #comment
         comment_uri = RESPONSE_DATA[row["comment_id"].strip()]

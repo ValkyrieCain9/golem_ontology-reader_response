@@ -37,64 +37,65 @@ rd:Ao3User1 a r:Actor ;
     r:has_role r:reader .
 
 rd:Ao3User2 a r:Actor ;
-    r:created rd:Ao3Comment2 ;
+    r:created rd:Ao3Comment2,
+        rd:ao3Fanfic ;
     r:has_role r:author .
 
 rd:GRClause1 a r:Discourse_Act ;
     r:has_sentiment r:positive ;
     r:has_theme r:socialImpact ;
-    r:has_type rd:evaluation ;
+    r:has_type r:evaluation ;
     r:has_value "This was a great book, definitely one of the more unique 40k entries." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause2 a r:Discourse_Act ;
     r:has_sentiment r:positive ;
     r:has_theme r:textualMaterial ;
-    r:has_type rd:evaluation ;
+    r:has_type r:evaluation ;
     r:has_value "In it, I found humour, pathos, tension and catharsis." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause3 a r:Discourse_Act ;
     r:has_sentiment r:negative ;
     r:has_theme r:individualExperience ;
-    r:has_type rd:evaluation ;
+    r:has_type r:evaluation ;
     r:has_value "However, some of the military conflict sections significantly slowed it down for me." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause4 a r:Discourse_Act ;
     r:has_theme r:textualMaterial ;
-    r:has_type rd:statement ;
+    r:has_type r:statement ;
     r:has_value "The driver of this novel is the relationship between Trazyn the Infinite and Orikan the Diviner." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause5 a r:Discourse_Act ;
     r:has_sentiment r:positive ;
     r:has_theme r:individualExperience ;
-    r:has_type rd:evaluation ;
+    r:has_type r:evaluation ;
     r:has_value "The scenes in which they converse are by far the most compelling, and I think I was a little disappointed that we didn't get more of them (despite them taking up perhaps half of the novel)." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause6 a r:Discourse_Act ;
-    r:has_type rd:statement ;
+    r:has_type r:statement ;
     r:has_value "I don't think it's prudent or advisable to give a history of the Necron race for context in this review." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause7 a r:Discourse_Act ;
     r:has_sentiment r:positive ;
     r:has_theme r:socialImpact ;
-    r:has_type rd:evaluation ;
+    r:has_type r:evaluation ;
     r:has_value "If you are interested in Necrons, this is possibly the best work of fiction you could ask for that explores their nature." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause8 a r:Discourse_Act ;
     r:has_sentiment r:negative ;
     r:has_theme r:socialImpact ;
-    r:has_type rd:disagreement ;
+    r:has_type r:disagreement ;
     r:has_value "I've seen people say this stands alone as a good sci-fi novel, but I'm not sure that it would." ;
     r:part_of rd:GoodReadsReview .
 
 rd:GRClause9 a r:Discourse_Act ;
-    r:has_type rd:statement ;
+    r:has_type r:statement ;
     r:has_value "I might give it to my dad to read and see if he is able to follow it - it would be an interesting experiment." ;
     r:part_of rd:GoodReadsReview .
 
@@ -164,7 +165,8 @@ rd:RedditComment6 a r:Discourse_Act ;
     r:part_of rd:Thread2 ;
     r:responds_to rd:RedditComment1 .
 
-rd:Thread1 a r:TopLevel_Comment_Thread .
+rd:Thread1 a r:Thread ;
+    r:has_threadType r:topLevelCommentThread .
 
 rd:goodReadsBook a r:Expression ;
     dcterms:title "The Infinite and the Divine" .
@@ -172,11 +174,8 @@ rd:goodReadsBook a r:Expression ;
 rd:redditAnimeDiscussion a r:Expression ;
     dcterms:title "Araburu Kisetsu no Otome-domo yo. - Thursday Anime Discussion Thread (ft. /r/anime Writing Club)" .
 
-rd:Thread3 a r:DeepNested_Thread .
-
-rd:ao3Fanfic a r:Expression ;
-    dcterms:title "Forever Girl (ATLA fanfic)",
-        "O Maidens in Your Savage Season (anime)" .
+rd:Thread3 a r:Thread ;
+    r:has_threadType r:deepNestedThread .
 
 rd:Ao3Comment2 a r:Discourse_Act ;
     r:has_subject rd:ao3Fanfic ;
@@ -193,11 +192,15 @@ rd:RedditComment3 a r:Discourse_Act ;
     r:part_of rd:Thread2 ;
     r:responds_to rd:RedditComment1 .
 
-rd:Thread2 a r:Nested_Thread .
+rd:Thread2 a r:Thread ;
+    r:has_threadType r:nestedThread .
+
+rd:ao3Fanfic a r:Expression ;
+    dcterms:title "Forever Girl (ATLA fanfic)" .
 
 rd:RedditComment1 a r:Discourse_Act ;
     r:has_subject rd:anime ;
-    r:has_type r:statememt ;
+    r:has_type r:statement ;
     r:has_value "I almost didn't realize this was about O Maidens In Your Savage Season because of r/anime's insistence on using the japanese titles" ;
     r:part_of rd:Thread1 ;
     r:responds_to rd:redditAnimeDiscussion .
@@ -211,6 +214,9 @@ also, i hope you don't mind my remark, but i noticed a tiny tiny typo you might'
 
 the yoo thingy. just thought i'd tell you! ANYWAYS THANK YOU FOR THE FOOD we are all starving for more >:)""" ;
     r:responds_to rd:ForeverGirl_Chapter1 .
+
+rd:anime a r:Expression ;
+    dcterms:title "O Maidens in Your Savage Season (anime)" .
 
 rd:GoodReadsReview a r:Discourse_Act ;
     r:has_subject rd:goodReadsBook ;
