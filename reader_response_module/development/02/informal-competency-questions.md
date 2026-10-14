@@ -6,15 +6,16 @@
 CQ_2.1
 
 ### Question
-What are the different immaterial bearers found in the digtial object of `site_A`
+What are some of the different websites on the internet and the different digital objects you can find on them?
 
 ### Expected Outcome
-A list of digital objects
+A list of digital objects with type website and a list of the objects attached to them?
 
 ### Result
-* `Post` has bearer `Site`
-* `Comment` has bearer `Site`
-* `Response_Expression` has bearer `Comment`
+* `YouTube` is a `Digital Object`
+* `YouTube`  has type `Website`
+* `YouTube` is bearer of `webpage`
+* `webpage` is bearer of `video`
 
 ### Based on
 Example 1
@@ -27,17 +28,40 @@ Example 1
 CQ_2.2
 
 ### Question
-Which objects are involved in the translation action with type commenting?
+What are the different webpages and their corresponding websites?
 
 ### Expected outcome
-A list of objects and agents
+A list of webpages and the websites they are attached to
 
 ### Result
-* `User` has account `Profile_Account`
-* `Response_Expression`
-* `Comment`
+* `r/DiscoElysium` is a `Digital Object`
+* `r/DiscoElysium` has type `Webpage`
+* `r/DiscoElysium` has bearer `Reddit`
 
 ### Based on 
 Example 2
+
+## Question 3
+
+### Identifier 
+CQ_2.3
+
+### Question
+For the digital objects on AO3, Reddit and YouTube, what are their type, the translation action which produced them, the users involved and the linked objects (in the case of comments)?
+
+### Expected outcome
+A list of digital objects found on the websites above, with their relevant attributes listed
+
+### Result
+* `Pouring Over Evidence (Art)` is a `Digital Object`
+* `Pouring Over Evidence (Art)` has type `image`
+* `Pouring Over Evidence (Art)` has type `text`
+* `Pouring Over Evidence (Art)` has bearer `r/DiscoElysium`
+* `Pouring Over Evidence (Art)` made from `Posting`
+* `Posting` performed by `u/sew_much_doubt`
+
+
+### Based on 
+Example 3
 
 ***
