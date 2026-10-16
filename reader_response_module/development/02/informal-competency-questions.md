@@ -12,9 +12,8 @@ What are some of the different websites on the internet and the different digita
 A list of digital objects with type website and a list of the objects attached to them?
 
 ### Result
-* `YouTube` is a `Digital Object`
-* `YouTube`  has type `Website`
-* `YouTube` is bearer of `webpage`
+* `YouTube` is a `website`
+* `YouTube` has webpage `webpage`
 * `webpage` is bearer of `video`
 
 ### Based on
@@ -36,7 +35,7 @@ A list of webpages and the websites they are attached to
 ### Result
 * `r/DiscoElysium` is a `Digital Object`
 * `r/DiscoElysium` has type `Webpage`
-* `r/DiscoElysium` has bearer `Reddit`
+* `r/DiscoElysium` is webpage of `Reddit`
 
 ### Based on 
 Example 2
@@ -54,9 +53,10 @@ A list of digital objects found on the websites above, with their relevant attri
 
 ### Result
 * `Pouring Over Evidence (Art)` is a `Digital Object`
-* `Pouring Over Evidence (Art)` has type `image`
-* `Pouring Over Evidence (Art)` has type `text`
-* `Pouring Over Evidence (Art)` has bearer `r/DiscoElysium`
+* `Pouring Over Evidence (Art)` has type `webpage`
+* `Pouring Over Evidence (Art)` bearer of `image`
+* * `Pouring Over Evidence (Art)` bearer of `text`
+* `Pouring Over Evidence (Art)` is webpage of `r/DiscoElysium`
 * `Pouring Over Evidence (Art)` made from `Posting`
 * `Posting` performed by `u/sew_much_doubt`
 
