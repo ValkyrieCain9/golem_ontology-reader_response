@@ -10,8 +10,8 @@
 | `Data File` | Encoded data which includes, documents, datasets, images, videos, audio recordings |
 | `Translation Actions` | A set of practices which move a bitstring entity from one layer of a bearer to another |
 | `Social Position` | The properties which define an object's expected fuctions, rights and responsibilities attributed to that object. This also defines what sort of translation actions can be peformed on the digtial object. |
-| `Website` | A `Digital Object` of HTML encoding, and other necessary programming files on top of the immaterial networking layer of the internet |
-| `Webpage` | A `Digital Object` contained by the structure of website, typically with a specifically defined subject/function to provide the website |
+| `Website` | A collection of webpages under a single domain name |
+| `Webpage` | A `Digital Object` of HTML encoding, and other necessary programming files on top of the immaterial networking layer of the internet |
 | `User` | Someone who interacts with website, using or contributing to the features of its webpages |
 | `Video` | A type of `Data File` of encoded moving images, typically encoded into formats like MP4 |
 | `Image` | A type of `Data File` of an encoded static image, typically in formats like JPEG or PNG|
