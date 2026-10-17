@@ -55,7 +55,7 @@ A list of digital objects found on the websites above, with their relevant attri
 * `Pouring Over Evidence (Art)` is a `Digital Object`
 * `Pouring Over Evidence (Art)` has type `webpage`
 * `Pouring Over Evidence (Art)` bearer of `image`
-* * `Pouring Over Evidence (Art)` bearer of `text`
+* `Pouring Over Evidence (Art)` bearer of `text`
 * `Pouring Over Evidence (Art)` is webpage of `r/DiscoElysium`
 * `Pouring Over Evidence (Art)` made from `Posting`
 * `Posting` performed by `u/sew_much_doubt`
