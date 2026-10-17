@@ -22,106 +22,47 @@ g.add((
     URIRef("file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/02/modelet_TBox.ttl")
 ))
 
-# for entities not in csv
-index = 1  
-
-# type individuals
-
-## digital object types
-SITE = RESPONSE_ONT.site
-POST = RESPONSE_ONT.post
-COMMENT = RESPONSE_ONT.comment
-PROFILE_ACC = RESPONSE_ONT.profileAccount
-
-## translation action types
-COMMENTING = RESPONSE_ONT.commenting
-POSTING = RESPONSE_ONT.posting
-
 # read the csv
 # change path to new data modelet
 with open("reader_response_module/development/02/data_modelet.csv", newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, delimiter=",")
     for row in reader:
 
-        #digital objects
-        comment_uri = RESPONSE_DATA[row["comment"].strip()]
-        g.add((comment_uri, RDF.type, RESPONSE_ONT.Digital_Object))
-        g.add((comment_uri, RDF.type, RESPONSE_ONT.Bearer))
-        g.add((comment_uri, RESPONSE_ONT.has_type, COMMENT))
-
-        post_uri = RESPONSE_DATA[row["post"].strip()]
-        g.add((post_uri, RDF.type, RESPONSE_ONT.Digital_Object))
-        g.add((post_uri, RDF.type, RESPONSE_ONT.Bearer))
-        g.add((post_uri, RESPONSE_ONT.has_type, POST))
-        #
-        g.add((post_uri, DCTERMS.title, Literal(row["post_title"].strip())))
-
-        site_uri = RESPONSE_DATA[row["site"].strip()]
-        g.add((site_uri, RDF.type, RESPONSE_ONT.Digital_Object))
-        g.add((site_uri, RDF.type, RESPONSE_ONT.Bearer))
-        g.add((site_uri, RESPONSE_ONT.has_type, SITE))
-        #
-        g.add((site_uri, SDO.name, Literal(row["site"].strip())))
+        #webpage
+        webpage_uri = RESPONSE_DATA[row["object_webpage_id"].strip()]
+        g.add((webpage_uri, RDF.type, RESPONSE_ONT.Digital_Object))
+        g.add((webpage_uri, RESPONSE_ONT.has_bitstring_type, RESPONSE_ONT.webpage))
+        g.add((webpage_uri, SDO.url, URIRef(row["object_webpage_path"])))
         
+        #website
+        website_uri = RESPONSE_DATA[row["website_id"].strip()]
+        g.add((website_uri, RDF.type, RESPONSE_ONT.Website))
+        g.add((website_uri, SDO.url, URIRef(row["website_domain"])))
+        g.add((website_uri, RESPONSE_ONT.has_webpage, webpage_uri))
 
-        #users
-        post_creator_uri = RESPONSE_DATA[row["post_creator_id"].strip()]
-        g.add((post_creator_uri, RDF.type, RESPONSE_ONT.User))
-        #
-        p_creator_acc_uri = RESPONSE_DATA[row["post_creator_acc"].strip()]
-        g.add((p_creator_acc_uri, RDF.type, RESPONSE_ONT.Digital_Object))
-        g.add((p_creator_acc_uri, RESPONSE_ONT.has_type, PROFILE_ACC))
-        g.add((post_creator_uri, RESPONSE_ONT.has_account, p_creator_acc_uri))
-        ##
-        g.add((p_creator_acc_uri, SDO.name, Literal(row["post_creator_acc"].strip())))
-        
-        comment_creator_uri = RESPONSE_DATA[row["comment_creator_id"].strip()]
-        g.add((comment_creator_uri, RDF.type, RESPONSE_ONT.User))
-        #
-        c_creator_acc_uri = RESPONSE_DATA[row["comment_creator_acc"].strip()]
-        g.add((c_creator_acc_uri, RDF.type, RESPONSE_ONT.Digital_Object))
-        g.add((c_creator_acc_uri, RESPONSE_ONT.has_type, PROFILE_ACC))
-        g.add((comment_creator_uri, RESPONSE_ONT.has_account, c_creator_acc_uri))
-        ##
-        g.add((c_creator_acc_uri, SDO.name, Literal(row["comment_creator_acc"].strip())))
+        #user
+        user_uri = RESPONSE_DATA[row["user_id"].strip()]
+        g.add((user_uri, RDF.type, RESPONSE_ONT.User))
 
-        #expressions
-        c_exp_uri = RESPONSE_DATA[f"comment_expression_{index}"]
-        g.add((c_exp_uri, RDF.type, RESPONSE_ONT.Expression))
-        g.add((c_exp_uri, RESPONSE_ONT.created_by, comment_creator_uri))
-        #
-        g.add((c_exp_uri, RESPONSE_ONT.has_value, Literal(row["comment_expression"].strip())))
+        #posting action
+        action_uri = RESPONSE_DATA[f'{row["object_id"].strip()}_Action']
+        g.add((action_uri, RDF.type, RESPONSE_ONT.Translation_Action))
+        g.add((action_uri, RESPONSE_ONT.has_translation_action_type, RESPONSE_ONT[row["action_type"].strip()]))
+        g.add((action_uri, RESPONSE_ONT.performed_by, user_uri))
+        if row["action_type"] == "posting":
+            g.add((webpage_uri, RESPONSE_ONT.result_of, action_uri))
 
-        p_exp_uri = RESPONSE_DATA[f"post_expression_{index}"]
-        g.add((p_exp_uri, RDF.type, RESPONSE_ONT.Expression))
-        g.add((p_exp_uri, RESPONSE_ONT.created_by, post_creator_uri))    
-        #
-        g.add((p_exp_uri, RESPONSE_ONT.has_value, Literal(row["post_expression"].strip())))    
-
-        #translation actions
-        posting_action_uri = RESPONSE_DATA[f"posting_action_{index}"]
-        g.add((posting_action_uri, RDF.type, RESPONSE_ONT.Translation_Action))
-        g.add((posting_action_uri, RESPONSE_ONT.has_type, POSTING))
-        g.add((posting_action_uri, RESPONSE_ONT.results_in, post_uri))
-        g.add((posting_action_uri, RESPONSE_ONT.performed_by, post_creator_uri))
-        g.add((p_exp_uri, RESPONSE_ONT.translated_by, posting_action_uri))
-
-        commenting_action_uri = RESPONSE_DATA[f"commenting_action_{index}"]
-        g.add((commenting_action_uri, RDF.type, RESPONSE_ONT.Translation_Action))
-        g.add((commenting_action_uri, RESPONSE_ONT.has_type, COMMENTING))
-        g.add((commenting_action_uri, RESPONSE_ONT.results_in, comment_uri))
-        g.add((commenting_action_uri, RESPONSE_ONT.performed_by, comment_creator_uri))
-        g.add((c_exp_uri, RESPONSE_ONT.translated_by, commenting_action_uri))                
-
-        #bearers of immaterial objects
-        g.add((comment_uri, RESPONSE_ONT.has_bearer, site_uri))
-        g.add((post_uri, RESPONSE_ONT.has_bearer, site_uri))
-        g.add((p_creator_acc_uri, RESPONSE_ONT.has_bearer, site_uri))
-        g.add((c_creator_acc_uri, RESPONSE_ONT.has_bearer, site_uri))
-        g.add((c_exp_uri, RESPONSE_ONT.has_bearer, comment_uri))
-        g.add((p_exp_uri, RESPONSE_ONT.has_bearer, post_uri))
-
-        index += 1
+        #object
+        obj_uri = RESPONSE_DATA[row["object_id"].strip()]
+        if row["object_type"] != "Textual_Expression":
+            g.add((obj_uri, RDF.type, RESPONSE_ONT.Digital_Object))
+            g.add((obj_uri, RESPONSE_ONT.has_type, RESPONSE_ONT[row["object_type"].strip()]))
+        else:
+            g.add((obj_uri, RDF.type, RESPONSE_ONT.Textual_Expression))
+            g.add((obj_uri, RESPONSE_ONT.has_value, Literal([row["object_content"].strip()])))
+        g.add((obj_uri, RESPONSE_ONT.created_by, user_uri))
+        g.add((obj_uri, RESPONSE_ONT.has_bearer, webpage_uri))
+        g.add((obj_uri, RESPONSE_ONT.translated_by, action_uri))
 
 # save
 g.serialize(destination="reader_response_module/development/02/modelet_ABox.ttl", format="turtle")

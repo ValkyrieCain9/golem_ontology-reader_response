@@ -1,4 +1,3 @@
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix r: <https://w3id.org/golem/ontology/response#> .
 @prefix rd: <https://w3id.org/golem/ontology/response/data#> .
@@ -7,103 +6,138 @@
 rd: a owl:Ontology ;
     owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/02/modelet_TBox.ttl> .
 
-rd:comment_expression_1 a r:Expression ;
-    r:created_by rd:r_u4 ;
-    r:has_bearer rd:r_c4 ;
-    r:has_value "Agreed. These sorts of sudden tone-shifts to make an impactful finale for an otherwise light-hearted SoL anime are way overdone and are just not what I'm watching for." ;
-    r:translated_by rd:commenting_action_1 .
+rd:AO3 a r:Website ;
+    schema:url <https://archiveofourown.org/> ;
+    r:has_webpage rd:forever_girl_chapter_1,
+        rd:forever_girl_chapter_1_comment .
 
-rd:comment_expression_2 a r:Expression ;
-    r:created_by rd:ao3_u1 ;
-    r:has_bearer rd:ao3_c2 ;
-    r:has_value "The buffet of writers logic 🥹" ;
-    r:translated_by rd:commenting_action_2 .
+rd:Ao3Comment a r:Textual_Expression ;
+    r:created_by rd:Ao3User2 ;
+    r:has_bearer rd:forever_girl_chapter_1_comment ;
+    r:has_value "[\"OH MY GOSH THIS IS INCREDIBLE!!! i was giggling and kicking my feet the entire chapter, and YES to aang's pov!!\"]" ;
+    r:translated_by rd:Ao3Comment_Action .
 
-rd:post_expression_1 a r:Expression ;
-    r:created_by rd:r_u1 ;
-    r:has_bearer rd:r_p1 ;
-    r:has_value "Hi! Welcome to another edition of the weekly Thursday Anime Discussion Thread, featuring us, the r/anime Writing Club. We simulwatch anime TV series and movies together once a month, so check us out if you'd like to participate. Our thoughts on the series, as always, are covered below. :)..." ;
-    r:translated_by rd:posting_action_1 .
+rd:Ao3Fanfic a r:Textual_Expression ;
+    r:created_by rd:Ao3User1 ;
+    r:has_bearer rd:forever_girl_chapter_1 ;
+    r:has_value "[\"The morning sun caught the spray of water as it arced through the air, and six small children whooped as they're clumsy streams splashed more of themselves than the target Katara had set up.\"]" ;
+    r:translated_by rd:Ao3Fanfic_Action .
 
-rd:post_expression_2 a r:Expression ;
-    r:created_by rd:ao3_u1 ;
-    r:has_bearer rd:ao3_p2 ;
-    r:has_value "Hi guys, wow. I'm bringing this story back, its been awhile I know, but i asked if someone wanted me to finish it and they said yes!" ;
-    r:translated_by rd:posting_action_2 .
+rd:Github a r:Website ;
+    schema:url <https://github.com/> ;
+    r:has_webpage rd:github_python_script .
 
-rd:AnimeMod a r:Digital_Object ;
-    schema:name "AnimeMod" ;
-    r:has_bearer rd:Reddit ;
-    r:has_type r:profileAccount .
+rd:GithubFile a r:Digital_Object ;
+    r:created_by rd:GithubUser ;
+    r:has_bearer rd:github_python_script ;
+    r:has_type r:python_script ;
+    r:translated_by rd:GithubFile_Action .
 
-rd:JurassicWorldfan555 a r:Digital_Object ;
-    schema:name "JurassicWorldfan555" ;
-    r:has_bearer rd:Ao3 ;
-    r:has_type r:profileAccount .
+rd:Reddit a r:Website ;
+    schema:url <https://www.reddit.com/> ;
+    r:has_webpage rd:r_disco_elysium_comment,
+        rd:r_disco_elysium_post .
 
-rd:baquea a r:Digital_Object ;
-    schema:name "baquea" ;
-    r:has_bearer rd:Reddit ;
-    r:has_type r:profileAccount .
+rd:RedditComment a r:Textual_Expression ;
+    r:created_by rd:RedditUser2 ;
+    r:has_bearer rd:r_disco_elysium_comment ;
+    r:has_value "['I really like the subtlety in the eyes of Harry looking at Kim. He just made a point and Kim is considering it. This is a great piece.']" ;
+    r:translated_by rd:RedditComment_Action .
 
-rd:commenting_action_1 a r:Translation_Action ;
-    r:has_type r:commenting ;
-    r:performed_by rd:r_u4 ;
-    r:results_in rd:r_c4 .
+rd:RedditImage a r:Digital_Object ;
+    r:created_by rd:RedditUser1 ;
+    r:has_bearer rd:r_disco_elysium_post ;
+    r:has_type r:image ;
+    r:translated_by rd:RedditImage_Action .
 
-rd:commenting_action_2 a r:Translation_Action ;
-    r:has_type r:commenting ;
-    r:performed_by rd:ao3_u1 ;
-    r:results_in rd:ao3_c2 .
+rd:YouTube a r:Website ;
+    schema:url <https://www.youtube.com/> ;
+    r:has_webpage rd:game_grumps_comment,
+        rd:game_grumps_video .
 
-rd:posting_action_1 a r:Translation_Action ;
-    r:has_type r:posting ;
-    r:performed_by rd:r_u1 ;
-    r:results_in rd:r_p1 .
+rd:YoutubeComment a r:Textual_Expression ;
+    r:created_by rd:YouTubeUser2 ;
+    r:has_bearer rd:game_grumps_comment ;
+    r:has_value "[\"The fact that Arin let Mario get enough coins to steal Dan's star by not paying attention in the cut out game is more heartbreaking than any Greek tragedy.\"]" ;
+    r:translated_by rd:YoutubeComment_Action .
 
-rd:posting_action_2 a r:Translation_Action ;
-    r:has_type r:posting ;
-    r:performed_by rd:ao3_u1 ;
-    r:results_in rd:ao3_p2 .
+rd:YoutubeVideo a r:Digital_Object ;
+    r:created_by rd:YouTubeUser1 ;
+    r:has_bearer rd:game_grumps_video ;
+    r:has_type r:video ;
+    r:translated_by rd:YoutubeVideo_Action .
 
-rd:ao3_c2 a r:Bearer,
-        r:Digital_Object ;
-    r:has_bearer rd:Ao3 ;
-    r:has_type r:comment .
+rd:Ao3Comment_Action a r:Translation_Action ;
+    r:has_translation_action_type r:commenting ;
+    r:performed_by rd:Ao3User2 .
 
-rd:ao3_p2 a r:Bearer,
-        r:Digital_Object ;
-    dcterms:title "Peeps Aren't Even Good (But its back!)" ;
-    r:has_bearer rd:Ao3 ;
-    r:has_type r:post .
+rd:RedditComment_Action a r:Translation_Action ;
+    r:has_translation_action_type r:commenting ;
+    r:performed_by rd:RedditUser2 .
 
-rd:r_c4 a r:Bearer,
-        r:Digital_Object ;
-    r:has_bearer rd:Reddit ;
-    r:has_type r:comment .
+rd:YoutubeComment_Action a r:Translation_Action ;
+    r:has_translation_action_type r:commenting ;
+    r:performed_by rd:YouTubeUser2 .
 
-rd:r_p1 a r:Bearer,
-        r:Digital_Object ;
-    dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
-    r:has_bearer rd:Reddit ;
-    r:has_type r:post .
+rd:Ao3Fanfic_Action a r:Translation_Action ;
+    r:has_translation_action_type r:posting ;
+    r:performed_by rd:Ao3User1 .
 
-rd:r_u1 a r:User ;
-    r:has_account rd:AnimeMod .
+rd:Ao3User1 a r:User .
 
-rd:r_u4 a r:User ;
-    r:has_account rd:baquea .
+rd:Ao3User2 a r:User .
 
-rd:Ao3 a r:Bearer,
-        r:Digital_Object ;
-    schema:name "Ao3" ;
-    r:has_type r:site .
+rd:GithubFile_Action a r:Translation_Action ;
+    r:has_translation_action_type r:posting ;
+    r:performed_by rd:GithubUser .
 
-rd:Reddit a r:Bearer,
-        r:Digital_Object ;
-    schema:name "Reddit" ;
-    r:has_type r:site .
+rd:GithubUser a r:User .
 
-rd:ao3_u1 a r:User ;
-    r:has_account rd:JurassicWorldfan555 .
+rd:RedditImage_Action a r:Translation_Action ;
+    r:has_translation_action_type r:posting ;
+    r:performed_by rd:RedditUser1 .
+
+rd:RedditUser1 a r:User .
+
+rd:RedditUser2 a r:User .
+
+rd:YouTubeUser1 a r:User .
+
+rd:YouTubeUser2 a r:User .
+
+rd:YoutubeVideo_Action a r:Translation_Action ;
+    r:has_translation_action_type r:posting ;
+    r:performed_by rd:YouTubeUser1 .
+
+rd:forever_girl_chapter_1 a r:Digital_Object ;
+    schema:url <https://archiveofourown.org/works/89450496/chapters/237562866> ;
+    r:has_bitstring_type r:webpage ;
+    r:result_of rd:Ao3Fanfic_Action .
+
+rd:forever_girl_chapter_1_comment a r:Digital_Object ;
+    schema:url <https://archiveofourown.org/works/89450496/chapters/237562866> ;
+    r:has_bitstring_type r:webpage .
+
+rd:game_grumps_comment a r:Digital_Object ;
+    schema:url <https://www.youtube.com/watch?v=eKI_pztbBAk> ;
+    r:has_bitstring_type r:webpage .
+
+rd:game_grumps_video a r:Digital_Object ;
+    schema:url <https://www.youtube.com/watch?v=eKI_pztbBAk> ;
+    r:has_bitstring_type r:webpage ;
+    r:result_of rd:YoutubeVideo_Action .
+
+rd:github_python_script a r:Digital_Object ;
+    schema:url <https://github.com/VinLOD-Saga/VinLOD-Saga/blob/main/csv_to_rdf/anime.py> ;
+    r:has_bitstring_type r:webpage ;
+    r:result_of rd:GithubFile_Action .
+
+rd:r_disco_elysium_comment a r:Digital_Object ;
+    schema:url <https://www.reddit.com/r/DiscoElysium/comments/1wuo5l2/pouring_over_evidence_art/> ;
+    r:has_bitstring_type r:webpage .
+
+rd:r_disco_elysium_post a r:Digital_Object ;
+    schema:url <https://www.reddit.com/r/DiscoElysium/comments/1wuo5l2/pouring_over_evidence_art/> ;
+    r:has_bitstring_type r:webpage ;
+    r:result_of rd:RedditImage_Action .
 
