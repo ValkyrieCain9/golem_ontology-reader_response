@@ -8,12 +8,11 @@ rd: a owl:Ontology ;
 
 rd:AO3 a r:Website ;
     schema:url <https://archiveofourown.org/> ;
-    r:has_webpage rd:forever_girl_chapter_1,
-        rd:forever_girl_chapter_1_comment .
+    r:has_webpage rd:forever_girl_chapter_1 .
 
 rd:Ao3Comment a r:Textual_Expression ;
     r:created_by rd:Ao3User2 ;
-    r:has_bearer rd:forever_girl_chapter_1_comment ;
+    r:has_bearer rd:forever_girl_chapter_1 ;
     r:has_value "[\"OH MY GOSH THIS IS INCREDIBLE!!! i was giggling and kicking my feet the entire chapter, and YES to aang's pov!!\"]" ;
     r:translated_by rd:Ao3Comment_Action .
 
@@ -35,12 +34,11 @@ rd:GithubFile a r:Digital_Object ;
 
 rd:Reddit a r:Website ;
     schema:url <https://www.reddit.com/> ;
-    r:has_webpage rd:r_disco_elysium_comment,
-        rd:r_disco_elysium_post .
+    r:has_webpage rd:r_disco_elysium_post .
 
 rd:RedditComment a r:Textual_Expression ;
     r:created_by rd:RedditUser2 ;
-    r:has_bearer rd:r_disco_elysium_comment ;
+    r:has_bearer rd:r_disco_elysium_post ;
     r:has_value "['I really like the subtlety in the eyes of Harry looking at Kim. He just made a point and Kim is considering it. This is a great piece.']" ;
     r:translated_by rd:RedditComment_Action .
 
@@ -52,12 +50,11 @@ rd:RedditImage a r:Digital_Object ;
 
 rd:YouTube a r:Website ;
     schema:url <https://www.youtube.com/> ;
-    r:has_webpage rd:game_grumps_comment,
-        rd:game_grumps_video .
+    r:has_webpage rd:game_grumps_video .
 
 rd:YoutubeComment a r:Textual_Expression ;
     r:created_by rd:YouTubeUser2 ;
-    r:has_bearer rd:game_grumps_comment ;
+    r:has_bearer rd:game_grumps_video ;
     r:has_value "[\"The fact that Arin let Mario get enough coins to steal Dan's star by not paying attention in the cut out game is more heartbreaking than any Greek tragedy.\"]" ;
     r:translated_by rd:YoutubeComment_Action .
 
@@ -109,32 +106,20 @@ rd:YoutubeVideo_Action a r:Translation_Action ;
     r:has_translation_action_type r:posting ;
     r:performed_by rd:YouTubeUser1 .
 
-rd:forever_girl_chapter_1 a r:Digital_Object ;
-    schema:url <https://archiveofourown.org/works/89450496/chapters/237562866> ;
-    r:has_bitstring_type r:webpage ;
-    r:result_of rd:Ao3Fanfic_Action .
-
-rd:forever_girl_chapter_1_comment a r:Digital_Object ;
-    schema:url <https://archiveofourown.org/works/89450496/chapters/237562866> ;
-    r:has_bitstring_type r:webpage .
-
-rd:game_grumps_comment a r:Digital_Object ;
-    schema:url <https://www.youtube.com/watch?v=eKI_pztbBAk> ;
-    r:has_bitstring_type r:webpage .
-
-rd:game_grumps_video a r:Digital_Object ;
-    schema:url <https://www.youtube.com/watch?v=eKI_pztbBAk> ;
-    r:has_bitstring_type r:webpage ;
-    r:result_of rd:YoutubeVideo_Action .
-
 rd:github_python_script a r:Digital_Object ;
     schema:url <https://github.com/VinLOD-Saga/VinLOD-Saga/blob/main/csv_to_rdf/anime.py> ;
     r:has_bitstring_type r:webpage ;
     r:result_of rd:GithubFile_Action .
 
-rd:r_disco_elysium_comment a r:Digital_Object ;
-    schema:url <https://www.reddit.com/r/DiscoElysium/comments/1wuo5l2/pouring_over_evidence_art/> ;
-    r:has_bitstring_type r:webpage .
+rd:forever_girl_chapter_1 a r:Digital_Object ;
+    schema:url <https://archiveofourown.org/works/89450496/chapters/237562866> ;
+    r:has_bitstring_type r:webpage ;
+    r:result_of rd:Ao3Fanfic_Action .
+
+rd:game_grumps_video a r:Digital_Object ;
+    schema:url <https://www.youtube.com/watch?v=eKI_pztbBAk> ;
+    r:has_bitstring_type r:webpage ;
+    r:result_of rd:YoutubeVideo_Action .
 
 rd:r_disco_elysium_post a r:Digital_Object ;
     schema:url <https://www.reddit.com/r/DiscoElysium/comments/1wuo5l2/pouring_over_evidence_art/> ;
