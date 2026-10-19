@@ -45,6 +45,9 @@ WHERE { <br />
 &nbsp;&nbsp;&nbsp;&nbsp;r:has_type ?type .<br />
 }
 
+### Based on
+CQ_2.2
+
 ## Query 3
 
 ### Identifier
@@ -69,6 +72,3 @@ WHERE { <br />
 
 ### Based on
 CQ_2.3
-
-### Based on
-CQ_2.2
