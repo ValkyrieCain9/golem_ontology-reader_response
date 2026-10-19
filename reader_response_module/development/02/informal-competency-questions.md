@@ -11,7 +11,7 @@ What are some of the different websites on the internet and the different digita
 ### Expected Outcome
 A list of digital objects with type website and a list of the objects attached to them?
 
-### Result
+### Result Sample
 * `YouTube` is a `website`
 * `YouTube` has webpage `webpage`
 * `webpage` is bearer of `video`
@@ -32,7 +32,7 @@ What are the different webpages and their corresponding websites?
 ### Expected outcome
 A list of webpages and the websites they are attached to
 
-### Result
+### Result Sample
 * `r/DiscoElysium` is a `Digital Object`
 * `r/DiscoElysium` has type `Webpage`
 * `r/DiscoElysium` is webpage of `Reddit`
@@ -46,18 +46,16 @@ Example 2
 CQ_2.3
 
 ### Question
-For the digital objects on AO3, Reddit and YouTube, what are their type, the translation action which produced them, the users involved and the linked objects (in the case of comments)?
+What are the immaterial objects found on different webpages, their type, tranlation action and users involved?
 
 ### Expected outcome
-A list of digital objects found on the websites above, with their relevant attributes listed
+A list of immaterial objects found on the webpages above, with their relevant attributes listed
 
-### Result
+### Result Sample
 * `Pouring Over Evidence (Art)` is a `Digital Object`
-* `Pouring Over Evidence (Art)` has type `webpage`
-* `Pouring Over Evidence (Art)` bearer of `image`
-* `Pouring Over Evidence (Art)` bearer of `text`
-* `Pouring Over Evidence (Art)` is webpage of `r/DiscoElysium`
-* `Pouring Over Evidence (Art)` made from `Posting`
+* `Pouring Over Evidence (Art)` has type `image`
+* `Pouring Over Evidence (Art)` has bearer `webpage`
+* `Pouring Over Evidence (Art)` translated by `Posting`
 * `Posting` performed by `u/sew_much_doubt`
 
 
