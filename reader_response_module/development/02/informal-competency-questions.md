@@ -46,7 +46,7 @@ Example 2
 CQ_2.3
 
 ### Question
-What are the immaterial objects found on different webpages, their type, tranlation action and users involved?
+What are the immaterial objects found on different webpages, their type, translation action and users involved?
 
 ### Expected outcome
 A list of immaterial objects found on the webpages above, with their relevant attributes listed
