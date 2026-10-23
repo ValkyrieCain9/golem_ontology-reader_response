@@ -152,13 +152,19 @@ schema:url a owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://schema.org/> .
 
 schema:datePublished a owl:DatatypeProperty ;
-    rdfs:range xsd:dateTime ;
+    rdfs:range [
+        a rdfs:Datatype ;
+        owl:unionOf ( xsd:date xsd:dateTime )
+    ] ;
     rdfs:label "date published" ;
     rdfs:comment "Date of first publication of the digital object, such as the moment a post or comment first appeared on a webpage. This is a shortcut for the time-span of the D7 Digital Machine Event through which the object was output." ;
     rdfs:isDefinedBy <http://schema.org/> .
 
 schema:dateModified a owl:DatatypeProperty ;
-    rdfs:range xsd:dateTime ;
+    rdfs:range [
+        a rdfs:Datatype ;
+        owl:unionOf ( xsd:date xsd:dateTime )
+    ] ;
     rdfs:label "date modified" ;
     rdfs:comment "Date on which the digital object was most recently modified, such as an edit to a post, comment or webpage. This is a shortcut for the time-span of the D7 Digital Machine Event through which the modification was performed." ;
     rdfs:isDefinedBy <http://schema.org/> .
@@ -322,7 +328,7 @@ schema:VideoObject a schema:MediaObject ;
 
 schema:Comment a :InternetObject ;
     rdfs:label "Comment" ;
-    rdfs:comment "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks." ;
+    rdfs:comment "A response to an Internet Object such as a Post. This typically has some sort of text but can also include other media like images too." ;
     rdfs:isDefinedBy <http://schema.org/> . 
 
 schema:WebSite a :InternetObject ;

@@ -1,112 +1,177 @@
 @prefix crm: <http://erlangen-crm.org/240307/> .
 @prefix crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix lrmoo: <https://cidoc-crm.org/extensions/lrmoo/owl/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix r: <https://w3id.org/golem/ontology/response#> .
 @prefix rd: <https://w3id.org/golem/ontology/response/data#> .
-@prefix schema: <https://schema.org/> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 rd: a owl:Ontology ;
     owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/02/it2_Tbox.ttl> .
 
-rd:AnimeMod a crmdig:D1_Digital_Object ;
-    crm:P105_right_held_by rd:r_u1 ;
-    crm:P130i_features_are_also_found_on rd:Reddit ;
-    crm:P2_has_type r:profileAccount ;
-    schema:name "AnimeMod" .
+rd:AO3 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://archiveofourown.org/"^^xsd:anyURI ;
+    r:has_webpage rd:forever_girl_chapter_1 .
 
-rd:JurassicWorldfan555 a crmdig:D1_Digital_Object ;
-    crm:P105_right_held_by rd:ao3_u1 ;
-    crm:P130i_features_are_also_found_on rd:Ao3 ;
-    crm:P2_has_type r:profileAccount ;
-    schema:name "JurassicWorldfan555" .
+rd:Github a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://github.com/"^^xsd:anyURI ;
+    r:has_webpage rd:github_python_script .
 
-rd:baquea a crmdig:D1_Digital_Object ;
-    crm:P105_right_held_by rd:r_u4 ;
-    crm:P130i_features_are_also_found_on rd:Reddit ;
-    crm:P2_has_type r:profileAccount ;
-    schema:name "baquea" .
+rd:Reddit a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://www.reddit.com/"^^xsd:anyURI ;
+    r:has_webpage rd:r_disco_elysium_post .
 
-rd:commenting_action_1 a crmdig:D7_Digital_Machine_Event ;
-    crm:P14_carried_out_by rd:r_u4 ;
-    crm:P17_was_motivated_by rd:comment_expression_1 ;
-    crm:P2_has_type r:commenting ;
-    crmdig:L11_had_output rd:r_c4 .
+rd:YouTube a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://www.youtube.com/"^^xsd:anyURI ;
+    r:has_webpage rd:game_grumps_video .
 
-rd:commenting_action_2 a crmdig:D7_Digital_Machine_Event ;
-    crm:P14_carried_out_by rd:ao3_u1 ;
-    crm:P17_was_motivated_by rd:comment_expression_2 ;
-    crm:P2_has_type r:commenting ;
-    crmdig:L11_had_output rd:ao3_c2 .
+rd:Ao3Comment a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:associatedMedia rd:Ao3Comment_Media ;
+    schema1:datePublished "2026-07-31"^^xsd:date ;
+    r:encoded_by rd:forever_girl_chapter_1 .
 
-rd:posting_action_1 a crmdig:D7_Digital_Machine_Event ;
-    crm:P14_carried_out_by rd:r_u1 ;
-    crm:P17_was_motivated_by rd:post_expression_1 ;
-    crm:P2_has_type r:posting ;
-    crmdig:L11_had_output rd:r_p1 .
+rd:Ao3Comment_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:Ao3User2 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:Ao3Comment .
 
-rd:posting_action_2 a crmdig:D7_Digital_Machine_Event ;
-    crm:P14_carried_out_by rd:ao3_u1 ;
-    crm:P17_was_motivated_by rd:post_expression_2 ;
-    crm:P2_has_type r:posting ;
-    crmdig:L11_had_output rd:ao3_p2 .
+rd:Ao3Comment_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:TextObject ;
+    schema1:text "OH MY GOSH THIS IS INCREDIBLE!!! i was giggling and kicking my feet the entire chapter, and YES to aang's pov!!" .
 
-rd:comment_expression_1 a lrmoo:F2_Expression ;
-    crm:P105_right_held_by rd:r_u4 ;
-    crm:P130i_features_are_also_found_on rd:r_c4 ;
-    crm:P190_has_symbolic_content "Agreed. These sorts of sudden tone-shifts to make an impactful finale for an otherwise light-hearted SoL anime are way overdone and are just not what I'm watching for." .
+rd:Ao3Fanfic a crmdig:D1_Digital_Object ;
+    crm:P2_has_type r:Post ;
+    schema1:associatedMedia rd:Ao3Fanfic_Media ;
+    schema1:datePublished "2026-07-29"^^xsd:date ;
+    r:encoded_by rd:forever_girl_chapter_1 ;
+    r:likeCount 1494 ;
+    r:viewCount 33115 .
 
-rd:comment_expression_2 a lrmoo:F2_Expression ;
-    crm:P105_right_held_by rd:ao3_u1 ;
-    crm:P130i_features_are_also_found_on rd:ao3_c2 ;
-    crm:P190_has_symbolic_content "The buffet of writers logic 🥹" .
+rd:Ao3Fanfic_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:Ao3User1 ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:Ao3Fanfic .
 
-rd:post_expression_1 a lrmoo:F2_Expression ;
-    crm:P105_right_held_by rd:r_u1 ;
-    crm:P130i_features_are_also_found_on rd:r_p1 ;
-    crm:P190_has_symbolic_content "Hi! Welcome to another edition of the weekly Thursday Anime Discussion Thread, featuring us, the r/anime Writing Club. We simulwatch anime TV series and movies together once a month, so check us out if you'd like to participate. Our thoughts on the series, as always, are covered below. :)..." .
+rd:Ao3Fanfic_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:TextObject ;
+    schema1:text "The morning sun caught the spray of water as it arced through the air, and six small children whooped as they're clumsy streams splashed more of themselves than the target Katara had set up." .
 
-rd:post_expression_2 a lrmoo:F2_Expression ;
-    crm:P105_right_held_by rd:ao3_u1 ;
-    crm:P130i_features_are_also_found_on rd:ao3_p2 ;
-    crm:P190_has_symbolic_content "Hi guys, wow. I'm bringing this story back, its been awhile I know, but i asked if someone wanted me to finish it and they said yes!" .
+rd:Ao3User1 a r:User ;
+    crm:P14i_performed rd:Ao3Fanfic_Action .
 
-rd:ao3_c2 a crmdig:D1_Digital_Object,
-        r:Immaterial_Information_Carrier ;
-    crm:P130i_features_are_also_found_on rd:Ao3 ;
-    crm:P2_has_type r:comment .
+rd:Ao3User2 a r:User ;
+    crm:P14i_performed rd:Ao3Comment_Action .
 
-rd:ao3_p2 a crmdig:D1_Digital_Object,
-        r:Immaterial_Information_Carrier ;
-    crm:P130i_features_are_also_found_on rd:Ao3 ;
-    crm:P2_has_type r:post ;
-    dcterms:title "Peeps Aren't Even Good (But its back!)" .
+rd:GithubFile a crmdig:D1_Digital_Object ;
+    crm:P148_has_component rd:GithubFile_Media ;
+    crm:P2_has_type r:Post ;
+    schema1:datePublished "2025-06-19"^^xsd:date ;
+    r:encoded_by rd:github_python_script .
 
-rd:r_c4 a crmdig:D1_Digital_Object,
-        r:Immaterial_Information_Carrier ;
-    crm:P130i_features_are_also_found_on rd:Reddit ;
-    crm:P2_has_type r:comment .
+rd:GithubFile_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:GithubUser ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:GithubFile .
 
-rd:r_p1 a crmdig:D1_Digital_Object,
-        r:Immaterial_Information_Carrier ;
-    crm:P130i_features_are_also_found_on rd:Reddit ;
-    crm:P2_has_type r:post ;
-    dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" .
+rd:GithubFile_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:SoftwareSourceCode .
 
-rd:Ao3 a crmdig:D1_Digital_Object,
-        r:Immaterial_Information_Carrier ;
-    crm:P2_has_type r:site ;
-    schema:name "Ao3" .
+rd:GithubUser a r:User ;
+    crm:P14i_performed rd:GithubFile_Action .
 
-rd:r_u1 a r:User .
+rd:RedditComment a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:associatedMedia rd:RedditComment_Media ;
+    schema1:datePublished "2026-10-01"^^xsd:date ;
+    r:encoded_by rd:r_disco_elysium_post ;
+    r:upvoteCount 151 .
 
-rd:r_u4 a r:User .
+rd:RedditComment_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser2 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:RedditComment .
 
-rd:Reddit a crmdig:D1_Digital_Object,
-        r:Immaterial_Information_Carrier ;
-    crm:P2_has_type r:site ;
-    schema:name "Reddit" .
+rd:RedditComment_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:TextObject ;
+    schema1:text "I really like the subtlety in the eyes of Harry looking at Kim. He just made a point and Kim is considering it. This is a great piece." .
 
-rd:ao3_u1 a r:User .
+rd:RedditImage a crmdig:D1_Digital_Object ;
+    crm:P2_has_type r:Post ;
+    schema1:associatedMedia rd:RedditImage_Media ;
+    schema1:datePublished "2026-10-01"^^xsd:date ;
+    r:encoded_by rd:r_disco_elysium_post ;
+    r:upvoteCount 1600 .
+
+rd:RedditImage_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser1 ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:RedditImage .
+
+rd:RedditImage_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:ImageObject .
+
+rd:RedditUser1 a r:User ;
+    crm:P14i_performed rd:RedditImage_Action .
+
+rd:RedditUser2 a r:User ;
+    crm:P14i_performed rd:RedditComment_Action .
+
+rd:YouTubeUser1 a r:User ;
+    crm:P14i_performed rd:YoutubeVideo_Action .
+
+rd:YouTubeUser2 a r:User ;
+    crm:P14i_performed rd:YoutubeComment_Action .
+
+rd:YoutubeComment a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:associatedMedia rd:YoutubeComment_Media ;
+    schema1:datePublished "2021-12-15"^^xsd:date ;
+    r:encoded_by rd:game_grumps_video ;
+    r:likeCount 485 .
+
+rd:YoutubeComment_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:YouTubeUser2 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:YoutubeComment .
+
+rd:YoutubeComment_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:TextObject ;
+    schema1:text "The fact that Arin let Mario get enough coins to steal Dan's star by not paying attention in the cut out game is more heartbreaking than any Greek tragedy." .
+
+rd:YoutubeVideo a crmdig:D1_Digital_Object ;
+    crm:P2_has_type r:Post ;
+    schema1:associatedMedia rd:YoutubeVideo_Media ;
+    schema1:datePublished "2021-12-15"^^xsd:date ;
+    r:encoded_by rd:game_grumps_video ;
+    r:likeCount 17000 ;
+    r:viewCount 422310 .
+
+rd:YoutubeVideo_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:YouTubeUser1 ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:YoutubeVideo .
+
+rd:YoutubeVideo_Media a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:VideoObject .
+
+rd:github_python_script a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://github.com/VinLOD-Saga/VinLOD-Saga/blob/main/csv_to_rdf/anime.py"^^xsd:anyURI .
+
+rd:forever_girl_chapter_1 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://archiveofourown.org/works/89450496/chapters/237562866"^^xsd:anyURI .
+
+rd:game_grumps_video a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://www.youtube.com/watch?v=eKI_pztbBAk"^^xsd:anyURI .
+
+rd:r_disco_elysium_post a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://www.reddit.com/r/DiscoElysium/comments/1wuo5l2/pouring_over_evidence_art/"^^xsd:anyURI .
 
