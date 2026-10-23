@@ -3,120 +3,369 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix crm: <http://erlangen-crm.org/240307/> .
+# @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix golem: <https://w3id.org/golem/ontology#> .
 @prefix crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> .
 @prefix lrmoo: <https://cidoc-crm.org/extensions/lrmoo/owl/> .
-
-# direct imports to run with reasoner
+@prefix schema: <http://schema.org/> .
 
 <https://w3id.org/golem/ontology/response#> a owl:Ontology ;
-    owl:imports <http://erlangen-crm.org/240307/> ,
-                <https://cidoc-crm.org/extensions/lrmoo/owl/> ,
-                <http://www.cidoc-crm.org/extensions/crmdig/> .
-
-# importing golem ttl
-
-# <https://w3id.org/golem/ontology/response#> a owl:Ontology ;
-#     owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem.ttl> ,
-#                 <http://www.cidoc-crm.org/extensions/crmdig/> .
+    owl:imports <http://erlangen-crm.org/240307/> .
 
 #Object Properties
-
-crmdig:L19_stores a owl:ObjectProperty ;
-    rdfs:subPropertyOf crm:P128_carries ;
-    owl:inverseOf crmdig:L19i_is_stored_on ;
-    rdfs:domain crmdig:D13_Digital_Information_Carrier ;
-    rdfs:range crmdig:D1_Digital_Object ;
-    rdfs:label "stores"@en ;
-    rdfs:comment "This property associates an instance of a D13 Digital Information Carrier with the instance of Digital Object that is stored on it." .
-
-crmdig:L19i_is_stored_on a owl:ObjectProperty ;
-    rdfs:subPropertyOf crm:P128i_is_carried_by ;
-    owl:inverseOf crmdig:L19_stores ;
-    rdfs:domain crmdig:D1_Digital_Object ;
-    rdfs:range crmdig:D13_Digital_Information_Carrier ;
-    rdfs:label "is stored on"@en .
 
 crmdig:L11_had_output a owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P94_has_created ;
     owl:inverseOf crmdig:L11i_was_output_of ;
     rdfs:domain crmdig:D7_Digital_Machine_Event ;
     rdfs:range crmdig:D1_Digital_Object ;
-    rdfs:label "had output"@en ;
-    rdfs:comment "This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the output of the activity." .
+    rdfs:label "had output" ;
+    rdfs:comment "This property associates an instance of D7 Digital Machine Event with an instance of D1 Digital Object which is the output of the activity." ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
 
 crmdig:L11i_was_output_of a owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P94i_was_created_by ;
     owl:inverseOf crmdig:L11_had_output ;
     rdfs:domain crmdig:D1_Digital_Object ;
     rdfs:range crmdig:D7_Digital_Machine_Event ;
-    rdfs:label "was output of"@en .
+    rdfs:label "was output of" ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
 
-# Classes
+crmdig:L19_stores a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P128_carries ;
+    owl:inverseOf crmdig:L19i_is_stored_on ;
+    rdfs:domain crmdig:D13_Digital_Information_Carrier ;
+    rdfs:range crmdig:D1_Digital_Object ;
+    rdfs:label "stores" ;
+    rdfs:comment "This property associates an instance of a D13 Digital Information Carrier with the instance of D1 Digital Object that is stored on it." ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
+
+crmdig:L19i_is_stored_on a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P128i_is_carried_by ;
+    owl:inverseOf crmdig:L19_stores ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range crmdig:D13_Digital_Information_Carrier ;
+    rdfs:label "is stored on" ;
+    rdfs:comment "This property associates an instance of D13 Digital Information Carrier with the instance of D1 Digital Object that is stored on it." ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
+
+schema:creator a owl:ObjectProperty ;
+    owl:propertyChainAxiom ( crm:P94i_was_created_by crm:P14_carried_out_by ) ;
+    rdfs:label "creator" ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+:encodes a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P130_shows_features_of ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range crm:E73_Information_Object ;
+    owl:inverseOf :encoded_by ;
+    rdfs:label "encodes" ;
+    rdfs:comment "Describes the digital encoding of an immaterial expression onto a digital object (including other digital objects). This is used to show the bearer relationship between different layers of a digital object" ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:encoded_by a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P130i_features_are_also_found_on ;
+    rdfs:domain crm:E73_Information_Object ;
+    rdfs:range crmdig:D1_Digital_Object ;
+    owl:inverseOf :encodes ;
+    rdfs:label "encoded_by" ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:has_webpage a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P148_has_component ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:hasValue schema:WebSite
+            ]
+        )
+    ] ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:hasValue schema:WebPage
+            ]
+        )
+    ] ;
+    owl:inverseOf :is_webpage_of ;
+    rdfs:label "has webpage" ;
+    rdfs:comment "Connects a website to the webpage it contains." ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:is_webpage_of a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P148i_is_component_of ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:hasValue schema:WebPage
+            ]
+        )
+    ] ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:hasValue schema:WebSite
+            ]
+        )
+    ] ;
+    owl:inverseOf :has_webpage ;
+    rdfs:label "is webpage of" ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+schema:associatedMedia a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P148_has_component ;
+    rdfs:domain crm:E73_Information_Object ;
+    rdfs:range [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:someValuesFrom schema:MediaObject
+            ]
+        )
+    ] ;
+    rdfs:label "associated media" ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+#Datatype Properties
+
+schema:userInteractionCount a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:url a owl:DatatypeProperty ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "url" ;
+    rdfs:comment "URL of the item. In the context of this ontology, it identifies the location at which a website, webpage or digital object is found on the internet." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:datePublished a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "date published" ;
+    rdfs:comment "Date of first publication of the digital object, such as the moment a post or comment first appeared on a webpage. This is a shortcut for the time-span of the D7 Digital Machine Event through which the object was output." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:dateModified a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "date modified" ;
+    rdfs:comment "Date on which the digital object was most recently modified, such as an edit to a post, comment or webpage. This is a shortcut for the time-span of the D7 Digital Machine Event through which the modification was performed." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+:viewCount a owl:DatatypeProperty;
+    rdfs:subPropertyOf schema:userInteractionCount ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:someValuesFrom :InternetObject
+            ]
+        )
+    ] ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:likeCount a owl:DatatypeProperty;
+    rdfs:subPropertyOf schema:userInteractionCount ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:someValuesFrom :InternetObject
+            ]
+        )
+    ] ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:upvoteCount a owl:DatatypeProperty;
+    rdfs:subPropertyOf schema:userInteractionCount ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:someValuesFrom :InternetObject
+            ]
+        )
+    ] ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:downvoteCount a owl:DatatypeProperty;
+    rdfs:subPropertyOf schema:userInteractionCount ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:intersectionOf (
+            crmdig:D1_Digital_Object
+            [ a owl:Restriction ;
+              owl:onProperty crm:P2_has_type ;
+              owl:someValuesFrom :InternetObject
+            ]
+        )
+    ] ;
+    rdfs:range xsd:integer ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+schema:text a owl:DatatypeProperty;
+    rdfs:subPropertyOf crm:P3_has_note ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+#Classes
 
 crmdig:D1_Digital_Object a owl:Class ;
     rdfs:subClassOf crm:E73_Information_Object ;
     rdfs:label "Digital Object"@en ;
-    rdfs:comment "This class comprises identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. Any change in the bit sequence results in a new instance of D1 Digital Object. Any aggregation of instances of D1 Digital Object into a whole treated as a single unit is also regarded as an instance of D1 Digital Object. This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of D1 Digital Object, mutually related by the P106 is composed of (forms part of) property. In the case of embedded metadata, the documentalist must take care to distinguish the identity of the object including the metadata from the identity of the included content described by the metadata. A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously." .
+    rdfs:comment "This class comprises identifiable immaterial items that can be represented as sets of bit sequences, such as data sets, e-texts, images, audio or video items, software, etc., and are documented as single units. Any change in the bit sequence results in a new instance of D1 Digital Object. Any aggregation of instances of D1 Digital Object into a whole treated as a single unit is also regarded as an instance of D1 Digital Object. This means that for instance, the content of a DVD, an XML file on it, and an element of this file, are regarded as distinct instances of D1 Digital Object, mutually related by the P106 is composed of (forms part of) property. In the case of embedded metadata, the documentalist must take care to distinguish the identity of the object including the metadata from the identity of the included content described by the metadata. A D1 Digital Object does not depend on a specific physical carrier, and it can exist on one or more carriers simultaneously." ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
 
 crmdig:D7_Digital_Machine_Event a owl:Class ;
     rdfs:subClassOf crm:E65_Creation ;
     rdfs:label "Digital Machine Event" ;
-    rdfs:comment "This class comprises events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. Some D7 Digital Machine Events may form part of a wider E65 Creation event. In this case, all machine output of the partial events is regarded as creation of the overall activity." .
+    rdfs:comment "This class comprises events that happen on physical digital devices following a human activity that intentionally caused its immediate or delayed initiation and results in the creation of a new instance of D1 Digital Object on behalf of the human actor. The input of a D7 Digital Machine Event may be parameter settings and/or data to be processed. Some D7 Digital Machine Events may form part of a wider E65 Creation event. In this case, all machine output of the partial events is regarded as creation of the overall activity." ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
 
 crmdig:D13_Digital_Information_Carrier a owl:Class ;
     rdfs:subClassOf <http://erlangen-crm.org/240307/E22_Human-Made_Object> ;
     rdfs:label "Digital Information Carrier" ;
-    rdfs:comment "This class comprises all instances of E84 Information Carrier that are explicitly designed to be used as persistent digital physical carriers of instances of D1 Digital Object. An instance of D13 Digital Information Carrier may or may not contain information, e.g., an empty diskette." .
+    rdfs:comment "This class comprises all instances of E84 Information Carrier that are explicitly designed to be used as persistent digital physical carriers of instances of D1 Digital Object. An instance of D13 Digital Information Carrier may or may not contain information, e.g., an empty diskette." ;
+    rdfs:isDefinedBy <http://www.cidoc-crm.org/extensions/crmdig/> .
 
-lrmoo:F2_Expression rdfs:subClassOf crm:E73_Information_Object .
+schema:MediaObject a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:label "Media Object" ;
+    rdfs:comment " This class specifies all types of D1_Digital_Object with a data file type that encodes some sort of media object such as an image, video, or audio object." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+:InternetObject a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:label "Internet Object" ;
+    rdfs:comment "This class specifies all types of D1_Digital_Object connected to the internet space. It is used as a container for schema.org vocabularly of internet-specific objects." ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:SoftwareObject a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:label "Software Object" ;
+    rdfs:comment "This class specifies all types of D1_Digital_Object that have a program file type." ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+
+:InternetAction a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:label "Internet Action" ;
+    rdfs:comment "This class specifies the types of D7_Digital_Machine_Event which can be performed by a User on the internet. Internet Actions involve at least some D1_Digital_Object with an Internet Object type. " ;
+    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :User a owl:Class ;
-    rdfs:subClassOf crm:E39_Actor ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf (
+            crm:E39_Actor
+            [
+                a owl:Restriction ;
+                owl:onProperty crm:P14i_performed ;
+                owl:someValuesFrom [
+                    a owl:Class ;
+                    owl:intersectionOf (
+                        crmdig:D7_Digital_Machine_Event
+                        [
+                            a owl:Restriction ;
+                            owl:onProperty crm:P2_has_type ;
+                            owl:someValuesFrom :InternetAction
+                        ]
+                    )
+                ]
+            ]
+        )
+    ] ;
+    rdfs:label "User" ;
+    rdfs:comment "An actor who interacts with digital objects on webpages." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:Immaterial_Information_Carrier a owl:Class ;
-    rdfs:subClassOf crm:E73_Information_Object ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+#Individuals
 
-:Object_Type a owl:Class ;
-    rdfs:subClassOf crm:E55_Type ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+schema:AudioObject a schema:MediaObject ;
+    rdfs:label "Audio Object" ;
+    rdfs:comment "An audio file." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:TextObject a schema:MediaObject ;
+    rdfs:label "Text Object" ;
+    rdfs:comment "A text file. The text can be unformatted or contain markup, html, etc." ;
+    rdfs:isDefinedBy <http://schema.org/> .
     
-:Action_Type a owl:Class ;
-    rdfs:subClassOf crm:E55_Type ;
+schema:ImageObject a schema:MediaObject ;
+    rdfs:label "Image Object" ;
+    rdfs:comment "An image file." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:VideoObject a schema:MediaObject ;
+    rdfs:label "Video Object" ;
+    rdfs:comment "A video file." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:Comment a :InternetObject ;
+    rdfs:label "Comment" ;
+    rdfs:comment "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks." ;
+    rdfs:isDefinedBy <http://schema.org/> . 
+
+schema:WebSite a :InternetObject ;
+    rdfs:label "Website" ;
+    rdfs:comment "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:WebPage a :InternetObject ;
+    rdfs:label "Webpage" ;
+    rdfs:comment "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:WebPageElement a :InternetObject ;
+    rdfs:label "Webpage Element" ;
+    rdfs:comment "A web page element, like a table or an image." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+:Post a :InternetObject ;
+    rdfs:label "Post" ;
+    rdfs:comment " The most generic type of posting to any sort of webpage by a user, usually including some sort of media object." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:Bitstring_Type a owl:Class ;
-    rdfs:subClassOf :Object_Type ;
+schema:SocialMediaPosting a :InternetObject ;
+    rdfs:label "Social Media Posting" ;
+    rdfs:comment "A post to a social media platform, including blog posts, tweets, Facebook posts, etc." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:DiscussionForumPosting a :InternetObject ;
+    rdfs:label "Discussion Forum Posting" ;
+    rdfs:comment "A posting to a discussion forum." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+schema:SoftwareSourceCode a :SoftwareObject ;
+    rdfs:label "Software source code" ;
+    rdfs:comment "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates." ;
+    rdfs:isDefinedBy <http://schema.org/> .
+
+:UserPosts a :InternetAction ;
+    rdfs:label "User Posts" ;
+    rdfs:comment "A type of user interaction with a webpage which results in the creation of some post." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:Translation_Action_Type a owl:Class ;
-    rdfs:subClassOf :Action_Type ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:Data_File a owl:Class ;
-    rdfs:subClassOf :Bitstring_Type ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:Program_File a owl:Class ;
-    rdfs:subClassOf :Bitstring_Type ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:site a :Data_File ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:post a :Data_File ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:comment a :Data_File ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:user_account a :Data_File ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:commenting a :Translation_Action_Type ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
-
-:posting a :Translation_Action_Type ;
-    rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
+schema:UserComments a :InternetAction ;
+    rdfs:label "User Comments" ;
+    rdfs:comment "A type of user interaction with a webpage which results in the creation of some comment to a post." ;
+    rdfs:isDefinedBy <http://schema.org/> .

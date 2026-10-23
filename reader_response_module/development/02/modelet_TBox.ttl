@@ -28,7 +28,7 @@
         owl:intersectionOf (
             :Digital_Object
             [ a owl:Restriction ;
-              owl:onProperty :has_type ;
+              owl:onProperty :has_bitstring_type ;
               owl:hasValue :webpage
             ]
         )
