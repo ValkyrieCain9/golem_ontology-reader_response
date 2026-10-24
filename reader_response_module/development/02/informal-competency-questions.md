@@ -2,29 +2,8 @@
 
 ## Question 1
 
-### Identifier
-CQ_2.1
-
-### Question
-What are some of the different websites on the internet and the different digital objects you can find on them?
-
-### Expected Outcome
-A list of digital objects with type website and a list of the objects attached to them?
-
-### Result Sample
-* `YouTube` is a `website`
-* `YouTube` has webpage `webpage`
-* `webpage` is bearer of `video`
-
-### Based on
-Example 1
-
-***
-
-## Question 2
-
 ### Identifier 
-CQ_2.2
+CQ_2.1
 
 ### Question
 What are the different webpages and their corresponding websites?
@@ -39,6 +18,25 @@ A list of webpages and the websites they are attached to
 
 ### Based on 
 Example 2
+
+## Question 2
+
+### Identifier
+CQ_2.2
+
+### Question
+What are some of the different websites on the internet and the different digital objects you can find on them?
+
+### Expected Outcome
+A list of digital objects with type website and a list of the objects attached to them?
+
+### Result Sample
+* `YouTube` is a `website`
+* `YouTube` has webpage `webpage`
+* `webpage` is bearer of `video`
+
+### Based on
+Example 1
 
 ## Question 3
 
