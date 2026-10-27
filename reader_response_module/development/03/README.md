@@ -16,11 +16,19 @@ With the different types of discourse acts established, further insight can be d
 
 The most common discourse structure is the thread, in which comments and their replies form nested trees. Lui et al. (2026) define four types of threads - post thread (the total collection of comments under a post), top-level comment thread which has as its parent the post itself, nested thread which has as its parent a top-level comment, and deep-nested thread which has as its parent a nested thread comment.
 
-<img width="1040" height="691" alt="image" src="https://github.com/user-attachments/assets/1b2a2a6b-6d0a-4b6a-afc9-eff2d6d51ac4" />
+<p align="center">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/1b2a2a6b-6d0a-4b6a-afc9-eff2d6d51ac4" />
+</p>
 
 ([Liu et al., 2026, p. 3](zotero://select/library/items/R2E8KYZ2))
 
 With this discourse relations can be identified both at the individual instances of communication (e.g. a single comment) which can be broken down into segments of discourse acts; or at the broader thread level where discourse relations come from a specific chain of comments.
+
+*Zhang, A., Culbertson, B., & Paritosh, P. (2017). Characterizing Online Discussion Using Coarse Discourse Sequences. Proceedings of the International AAAI Conference on Web and Social Media, 11(1), 357–366. https://doi.org/10.1609/icwsm.v11i1.14886*
+
+*Rebora, S., & Vezzani, G. (2024). Models of Literary Evaluation and Web 2.0. An Annotation Experiment with Goodreads Reviews.*
+
+*Liu, Y., Choi, F., & Chandrasekharan, E. (2026). Needling Through the Threads: A Visualization Tool for Navigating Threaded Online Discussions. Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems, CHI ’26, 1–18. https://doi.org/10.1145/3772318.3790365*
 
 ## Example 1
 
