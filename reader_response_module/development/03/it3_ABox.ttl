@@ -1,0 +1,433 @@
+@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> .
+@prefix golem: <https://w3id.org/golem/ontology#> .
+@prefix lrmoo: <https://cidoc-crm.org/extensions/lrmoo/owl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix r: <https://w3id.org/golem/ontology/response#> .
+@prefix rd: <https://w3id.org/golem/ontology/response/data#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rd: a owl:Ontology ;
+    owl:imports <file:///Users/regina/Documents/UNIBO/Thesis/GOLEM/golem_ontology-reader_response/reader_response_module/development/03/it3_TBox.ttl> .
+
+rd:AO3 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://archiveofourown.org/"^^xsd:anyURI ;
+    r:has_webpage rd:ForeverGirl_Chapter1 .
+
+rd:Ao3Clause1 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:Ao3ReaderComment ;
+    crm:P2_has_type r:Appreciation ;
+    schema1:text "ohm y god im so excited WE NEED MOREEEEE." ;
+    r:has_theme r:IndividualExperience .
+
+rd:Ao3Clause2 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:Ao3ReaderComment ;
+    crm:P2_has_type r:Appreciation ;
+    crm:P67_refers_to rd:Aang ;
+    schema1:text "the air tickling the back of her neck oh aang.... do that more please thank you." ;
+    r:has_theme r:TextualMetatextualMaterial .
+
+rd:Ao3Clause5 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:Ao3AuthorComment ;
+    crm:P2_has_type r:Statement ;
+    schema1:text "More coming soon!!" ;
+    r:has_sentiment r:Positive ;
+    r:responds_to rd:Ao3Clause4 .
+
+rd:Ao3Clause6 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:Ao3AuthorComment ;
+    crm:P2_has_type r:Answer ;
+    schema1:text "And thank you for finding that and letting me know 🥹🥹 I fixed it." ;
+    r:has_sentiment r:Positive ;
+    r:responds_to rd:Ao3Clause3 .
+
+rd:GRClause1 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Evaluation ;
+    crm:P67_refers_to rd:Warhammer_40K ;
+    schema1:text "This was a great book, definitely one of the more unique 40k entries." ;
+    r:has_sentiment r:Positive ;
+    r:has_theme r:SocialImpact .
+
+rd:GRClause2 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Evaluation ;
+    schema1:text "In it, I found humour, pathos, tension and catharsis." ;
+    r:has_sentiment r:Positive ;
+    r:has_theme r:TextualMetatextualMaterial .
+
+rd:GRClause3 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Evaluation ;
+    schema1:text "However, some of the military conflict sections significantly slowed it down for me." ;
+    r:has_sentiment r:Negative ;
+    r:has_theme r:IndividualExperience .
+
+rd:GRClause4 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Statement ;
+    crm:P67_refers_to rd:Orikan_and_Trazyn ;
+    schema1:text "The driver of this novel is the relationship between Trazyn the Infinite and Orikan the Diviner." ;
+    r:has_theme r:TextualMetatextualMaterial .
+
+rd:GRClause5 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Evaluation ;
+    crm:P67_refers_to rd:Orikan_and_Trazyn ;
+    schema1:text "The scenes in which they converse are by far the most compelling, and I think I was a little disappointed that we didn't get more of them (despite them taking up perhaps half of the novel)." ;
+    r:has_sentiment r:Positive ;
+    r:has_theme r:IndividualExperience .
+
+rd:GRClause6 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Statement ;
+    schema1:text "I don't think it's prudent or advisable to give a history of the Necron race for context in this review." .
+
+rd:GRClause7 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Evaluation ;
+    schema1:text "If you are interested in Necrons, this is possibly the best work of fiction you could ask for that explores their nature." ;
+    r:has_sentiment r:Positive ;
+    r:has_theme r:SocialImpact .
+
+rd:GRClause8 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Disagreement ;
+    schema1:text "I've seen people say this stands alone as a good sci-fi novel, but I'm not sure that it would." ;
+    r:has_sentiment r:Negative ;
+    r:has_theme r:SocialImpact .
+
+rd:GRClause9 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:GoodReadsReview ;
+    crm:P2_has_type r:Statement ;
+    schema1:text "I might give it to my dad to read and see if he is able to follow it - it would be an interesting experiment." .
+
+rd:Goodreads a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://www.goodreads.com/"^^xsd:anyURI ;
+    r:has_webpage rd:Infinite_and_Divine_Goodreads .
+
+rd:Reddit a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebSite ;
+    schema1:url "https://www.reddit.com/"^^xsd:anyURI ;
+    r:has_webpage rd:Thur_Anime_Discussion_Thread .
+
+rd:RedditDiscussionSection a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:RedditAnimeDiscussion ;
+    crm:P2_has_type r:Statement ;
+    crm:P67_refers_to rd:Kazusa_Onodera ;
+    schema1:text "Araburu makes my skin crawl in two distinct ways. The first is any time a scene hit too close to home, like most scenes with Kazusa where I couldn’t help but see my younger self in her and how her insecurities would rather let someone else have the person she liked the herself." ;
+    r:has_theme r:IndividualExperience .
+
+rd:Aang a golem:G1_Character .
+
+rd:Ao3AuthorComment_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:Ao3User2 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:Ao3_Comment2 .
+
+rd:Ao3Clause3 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:Ao3ReaderComment ;
+    crm:P2_has_type r:Suggestion ;
+    schema1:text """also, i hope you don't mind my remark, but i noticed a tiny tiny typo you might've missed "...he murmured against her ear, “I missed you yoo.”"
+
+the yoo thingy. just thought i'd tell you!""" ;
+    r:has_theme r:TextualMetatextualMaterial .
+
+rd:Ao3Clause4 a r:Discourse_Act ;
+    crm:P148i_is_component_of rd:Ao3ReaderComment ;
+    crm:P2_has_type r:Appreciation ;
+    schema1:text "ANYWAYS THANK YOU FOR THE FOOD we are all starving for more >:)" ;
+    r:has_theme r:IndividualExperience .
+
+rd:Ao3ReaderComment_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:Ao3User1 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:Ao3_Comment1 .
+
+rd:Ao3User1 a r:User ;
+    crm:P14i_performed rd:Ao3ReaderComment_Action ;
+    r:has_user_role r:Reader .
+
+rd:GoodReadsReview_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:goodreadsUser ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:GoodReadsReview_Post .
+
+rd:Kazusa_Onodera a golem:G1_Character .
+
+rd:RedditAnimeDiscussion_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser7 ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:reddit_Post .
+
+rd:RedditComment1_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser1 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:reddit_c1 .
+
+rd:RedditComment2 a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Agreement ;
+    schema1:text "Yeah they should at least put the English title in parenthesis somewhere in the post. I flipflop between Japanese and English titles based on how easy it is to say so having both would be nice lol." ;
+    r:encoded_by rd:reddit_c2 ;
+    r:responds_to rd:RedditComment1 .
+
+rd:RedditComment2_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser2 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:reddit_c2 .
+
+rd:RedditComment3_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser3 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:reddit_c3 .
+
+rd:RedditComment4 a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Agreement ;
+    schema1:text "The ED was a banger as well, maybe even better than the OP." ;
+    r:encoded_by rd:reddit_c4 ;
+    r:responds_to rd:RedditComment3 .
+
+rd:RedditComment4_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser4 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:reddit_c4 .
+
+rd:RedditComment5 a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Elaboration ;
+    schema1:text "Nakayubi tatero~♪" ;
+    r:encoded_by rd:reddit_c5 ;
+    r:responds_to rd:RedditComment3 .
+
+rd:RedditComment5_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser5 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:reddit_c5 .
+
+rd:RedditComment6 a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Humour ;
+    schema1:text "Just learn japanese bro it's only 5 years till fluency" ;
+    r:encoded_by rd:reddit_c6 ;
+    r:responds_to rd:RedditComment1 .
+
+rd:RedditComment6_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:RedditUser6 ;
+    crm:P2_has_type schema1:UserComments ;
+    crmdig:L11_had_output rd:reddit_c6 .
+
+rd:RedditUser1 a r:User ;
+    crm:P14i_performed rd:RedditComment1_Action .
+
+rd:RedditUser2 a r:User ;
+    crm:P14i_performed rd:RedditComment2_Action .
+
+rd:RedditUser3 a r:User ;
+    crm:P14i_performed rd:RedditComment3_Action .
+
+rd:RedditUser4 a r:User ;
+    crm:P14i_performed rd:RedditComment4_Action .
+
+rd:RedditUser5 a r:User ;
+    crm:P14i_performed rd:RedditComment5_Action .
+
+rd:RedditUser6 a r:User ;
+    crm:P14i_performed rd:RedditComment6_Action .
+
+rd:RedditUser7 a r:User ;
+    crm:P14i_performed rd:RedditAnimeDiscussion_Action ;
+    r:has_user_role r:Moderator .
+
+rd:Thread1 a r:Thread ;
+    crm:P2_has_type r:TopLevelCommentThread ;
+    r:has_comment rd:reddit_c1 .
+
+rd:Warhammer_40K a golem:G15_Fandom .
+
+rd:ao3Fanfic_Action a crmdig:D7_Digital_Machine_Event ;
+    crm:P14_carried_out_by rd:Ao3User2 ;
+    crm:P2_has_type r:UserPosts ;
+    crmdig:L11_had_output rd:ao3Fanfic_Post .
+
+rd:goodReadsBook a lrmoo:F2_Expression ;
+    schema1:title "The Infinite and the Divine" .
+
+rd:goodreadsUser a r:User ;
+    crm:P14i_performed rd:GoodReadsReview_Action .
+
+rd:Ao3User2 a r:User ;
+    crm:P14i_performed rd:Ao3AuthorComment_Action,
+        rd:ao3Fanfic_Action ;
+    r:has_user_role r:Author .
+
+rd:Ao3_Comment1 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2026-08-02"^^xsd:date ;
+    r:encoded_by rd:ForeverGirl_Chapter1 ;
+    r:encodes rd:Ao3ReaderComment .
+
+rd:Ao3_Comment2 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2026-08-02"^^xsd:date ;
+    r:encoded_by rd:ForeverGirl_Chapter1 ;
+    r:encodes rd:Ao3AuthorComment .
+
+rd:GoodReadsReview_Post a crmdig:D1_Digital_Object ;
+    crm:P2_has_type r:Post ;
+    schema1:datePublished "2026-07-09"^^xsd:date ;
+    r:encoded_by rd:Infinite_and_Divine_Goodreads ;
+    r:encodes rd:GoodReadsReview ;
+    r:likeCount 12 .
+
+rd:Infinite_and_Divine_Goodreads a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://www.goodreads.com/book/show/55750643-the-infinite-and-the-divine"^^xsd:anyURI .
+
+rd:Orikan_and_Trazyn a golem:G4_Social_Relationship .
+
+rd:Thread3 a r:Thread ;
+    crm:P2_has_type r:DeepNestedThread ;
+    r:has_comment rd:reddit_c4,
+        rd:reddit_c5 .
+
+rd:ao3Fanfic_Post a crmdig:D1_Digital_Object ;
+    crm:P2_has_type r:Post ;
+    schema1:datePublished "2026-07-29"^^xsd:date ;
+    r:encoded_by rd:ForeverGirl_Chapter1 ;
+    r:encodes rd:ao3Fanfic ;
+    r:likeCount 1494 .
+
+rd:reddit_Post a crmdig:D1_Digital_Object ;
+    crm:P2_has_type r:Post ;
+    schema1:datePublished "2021-08-26"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditAnimeDiscussion ;
+    r:upvoteCount 173 .
+
+rd:Ao3AuthorComment a r:Discourse_Act ;
+    crm:P129_is_about rd:ao3Fanfic ;
+    crm:P2_has_type r:Appreciation ;
+    schema1:text """More coming soon!!
+
+And thank you for finding that and letting me know 🥹🥹 I fixed it.""" ;
+    r:encoded_by rd:Ao3_Comment2 ;
+    r:responds_to rd:Ao3ReaderComment .
+
+rd:RedditAnimeDiscussion a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Statement ;
+    schema1:text "Hi! Welcome to another edition of the weekly Thursday Anime Discussion Thread, featuring us, the r/anime Writing Club. We simulwatch anime TV series and movies together once a month, so check us out if you'd like to participate. Our thoughts on the series, as always, are covered below. :)" ;
+    r:encoded_by rd:reddit_Post .
+
+rd:RedditComment3 a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Statement ;
+    schema1:text "You didn’t recognize it from the banger OP?" ;
+    r:encoded_by rd:reddit_c3 ;
+    r:responds_to rd:RedditComment1 .
+
+rd:Thread2 a r:Thread ;
+    crm:P2_has_type r:NestedThread ;
+    r:has_comment rd:reddit_c2,
+        rd:reddit_c3,
+        rd:reddit_c6 .
+
+rd:reddit_c1 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2021-08-26"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditComment1 ;
+    r:is_comment_of rd:Thread1 ;
+    r:upvoteCount 8 .
+
+rd:reddit_c2 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2021-08-27"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditComment2 ;
+    r:is_comment_of rd:Thread2 ;
+    r:upvoteCount 6 .
+
+rd:reddit_c3 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2021-08-26"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditComment3 ;
+    r:is_comment_of rd:Thread2 ;
+    r:upvoteCount 12 .
+
+rd:reddit_c4 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2021-08-26"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditComment4 ;
+    r:is_comment_of rd:Thread3 ;
+    r:upvoteCount 4 .
+
+rd:reddit_c5 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2021-08-27"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditComment5 ;
+    r:is_comment_of rd:Thread3 ;
+    r:upvoteCount 2 .
+
+rd:reddit_c6 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:Comment ;
+    schema1:datePublished "2021-09-10"^^xsd:date ;
+    r:encoded_by rd:Thur_Anime_Discussion_Thread ;
+    r:encodes rd:RedditComment6 ;
+    r:is_comment_of rd:Thread2 ;
+    r:upvoteCount 0 .
+
+rd:ForeverGirl_Chapter1 a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://archiveofourown.org/works/89450496/chapters/237562866"^^xsd:anyURI .
+
+rd:RedditComment1 a r:Discourse_Act ;
+    crm:P129_is_about rd:anime ;
+    crm:P2_has_type r:Statement ;
+    schema1:text "I almost didn't realize this was about O Maidens In Your Savage Season because of r/anime's insistence on using the japanese titles" ;
+    r:encoded_by rd:reddit_c1 ;
+    r:responds_to rd:RedditAnimeDiscussion .
+
+rd:ao3Fanfic a lrmoo:F2_Expression ;
+    schema1:text "It's been eight years since the war ended, and since Aang and Katara decided not to pursue a relationship. But when Aang drops into the Southern Water Tribe to visit, he finds Katara betrothed to someone else. And that just won't do." ;
+    schema1:title "Forever girl" ;
+    r:encoded_by rd:ao3Fanfic_Post .
+
+rd:Ao3ReaderComment a r:Discourse_Act ;
+    crm:P129_is_about rd:ao3Fanfic ;
+    crm:P2_has_type r:Appreciation ;
+    schema1:text """ohm y god im so excited WE NEED MOREEEEE. the air tickling the back of her neck oh aang.... do that more please thank you.
+
+also, i hope you don't mind my remark, but i noticed a tiny tiny typo you might've missed "...he murmured against her ear, “I missed you yoo.”"
+
+the yoo thingy. just thought i'd tell you! ANYWAYS THANK YOU FOR THE FOOD we are all starving for more >:)""" ;
+    r:encoded_by rd:Ao3_Comment1 ;
+    r:responds_to rd:ao3Fanfic .
+
+rd:anime a lrmoo:F2_Expression ;
+    schema1:title "O Maidens in Your Savage Season (anime)" .
+
+rd:Thur_Anime_Discussion_Thread a crmdig:D1_Digital_Object ;
+    crm:P2_has_type schema1:WebPage ;
+    schema1:url "https://www.reddit.com/r/anime/comments/pbnr5u/araburu_kisetsu_no_otomedomo_yo_thursday_anime/"^^xsd:anyURI .
+
+rd:GoodReadsReview a r:Discourse_Act ;
+    crm:P129_is_about rd:goodReadsBook ;
+    crm:P2_has_type r:Evaluation ;
+    schema1:text """This was a great book, definitely one of the more unique 40k entries. In it, I found humour, pathos, tension and catharsis. However, some of the military conflict sections significantly slowed it down for me.
+
+The driver of this novel is the relationship between Trazyn the Infinite and Orikan the Diviner. The scenes in which they converse are by far the most compelling, and I think I was a little disappointed that we didn't get more of them (despite them taking up perhaps half of the novel).
+
+I don't think it's prudent or advisable to give a history of the Necron race for context in this review. If you are interested in Necrons, this is possibly the best work of fiction you could ask for that explores their nature.
+
+I've seen people say this stands alone as a good sci-fi novel, but I'm not sure that it would. I might give it to my dad to read and see if he is able to follow it - it would be an interesting experiment.""" ;
+    r:encoded_by rd:GoodReadsReview_Post .
+
