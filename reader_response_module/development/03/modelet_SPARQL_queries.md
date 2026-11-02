@@ -3,7 +3,7 @@
 ## Query 1
 
 ### Identifier
-SQ_3.1
+sq_3.1
 
 ### Query
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <br />
@@ -29,7 +29,7 @@ CQ_3.1
 ## Query 2
 
 ### Identifier
-SQ_3.2
+sq_3.2
 
 ### Query
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <br />
@@ -55,7 +55,7 @@ CQ_3.2
 ## Query 3
 
 ### Identifier
-SQ_3.3
+sq_3.3
 
 ### Query
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <br />
@@ -81,7 +81,7 @@ CQ_3.3
 ## Query 4
 
 ### Identifier
-SQ_3.4
+sq_3.4
 
 ### Query
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <br />
