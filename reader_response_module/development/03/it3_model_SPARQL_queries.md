@@ -5,6 +5,7 @@
 ### Identifier
 SQ_3.1
 
+### Query
 PREFIX crm: <http://erlangen-crm.org/240307/> <br />
 PREFIX crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> <br />
 PREFIX golem: <https://w3id.org/golem/ontology#> <br />
@@ -61,6 +62,7 @@ CQ_3.2
 ### Identifier
 SQ_3.3
 
+### Query
 PREFIX crm: <http://erlangen-crm.org/240307/> <br />
 PREFIX crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> <br />
 PREFIX golem: <https://w3id.org/golem/ontology#> <br />
@@ -91,6 +93,7 @@ CQ_3.3
 ### Identifier
 SQ_3.4
 
+### Query
 PREFIX crm: <http://erlangen-crm.org/240307/> <br />
 PREFIX crmdig: <http://www.cidoc-crm.org/extensions/crmdig/> <br />
 PREFIX golem: <https://w3id.org/golem/ontology#> <br />
