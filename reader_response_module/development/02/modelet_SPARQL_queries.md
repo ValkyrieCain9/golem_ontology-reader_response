@@ -5,6 +5,7 @@
 ### Identifier
 sq_2.1
 
+### Query
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <br />
 PREFIX owl: <http://www.w3.org/2002/07/owl#> <br />
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> <br />
@@ -53,6 +54,7 @@ CQ_2.2
 ### Identifier
 sq_2.3
 
+### Query
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> <br />
 PREFIX owl: <http://www.w3.org/2002/07/owl#> <br />
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> <br />
