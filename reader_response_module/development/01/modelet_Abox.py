@@ -57,6 +57,7 @@ with open("reader_response_module/development/01/data_modelet.csv", newline='', 
             rating_system_uri = RESPONSE_DATA[row["rating system"].strip()]
             g.add((rating_system_uri, RDF.type, RESPONSE_ONT.RatingSystem))
             g.add((rating_uri, RESPONSE_ONT.hasRatingSystem, rating_system_uri))
+            g.add((comment_uri, RESPONSE_ONT.hasRating, rating_uri))
             index += 1
 
         if row["hasReply"].strip():

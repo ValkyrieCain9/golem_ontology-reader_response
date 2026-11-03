@@ -11,7 +11,6 @@
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :hasReply a owl:ObjectProperty ;
-    rdfs:subPropertyOf :hasComment ;
     rdfs:domain :Comment ;
     rdfs:range :Comment ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
@@ -71,9 +70,9 @@
     rdfs:range :Site ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
-:hasRatingValue a owl:DataProperty ;
+:hasRatingValue a owl:DatatypeProperty ;
     rdfs:domain :Rating ;
-    rdfs:range xsd:String ;
+    rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response> .
 
 :Comment a owl:Class ;
