@@ -12,13 +12,8 @@ rd:ao3_p1 a r:Post ;
     dcterms:title "Peeps Aren't Even Good (But its back!)" ;
     dlp_lite:part_of rd:Ao3 ;
     r:created_by rd:JurassicWorldfan555 ;
-    r:has_comment rd:ao3_c1 .
-
-rd:ao3_p2 a r:Post ;
-    dcterms:title "Peeps Aren't Even Good (But its back!)" ;
-    dlp_lite:part_of rd:Ao3 ;
-    r:created_by rd:JurassicWorldfan555 ;
-    r:has_comment rd:ao3_c2 .
+    r:has_comment rd:ao3_c1,
+        rd:ao3_c2 .
 
 rd:r_p1 a r:Post ;
     dcterms:title "Kobayashi-san Chi no Maid Dragon (Season 1) - Thursday Anime Discussion Thread (ft. r/anime Writing Club)" ;
@@ -35,6 +30,8 @@ rd:wn_p1 a r:Post ;
     r:created_by rd:Cuttlefish ;
     r:has_comment rd:wn_c1 .
 
+rd:Ao3 a r:Site .
+
 rd:Catystery a r:User .
 
 rd:Cuttlefish a r:User .
@@ -50,7 +47,7 @@ rd:TiredIntrovertawake a r:User .
 rd:Webnovel a r:Site .
 
 rd:ao3_c1 a r:Comment ;
-    dlp_lite:part_of rd:thread_2 ;
+    dlp_lite:part_of rd:thread_3 ;
     r:created_by rd:TiredIntrovertawake ;
     r:has_reply rd:ao3_c2 .
 
@@ -106,10 +103,10 @@ rd:wn_c1 a r:Comment ;
 
 rd:AnimeMod a r:User .
 
-rd:Ao3 a r:Site .
+rd:JurassicWorldfan555 a r:User .
 
 rd:ao3_c2 a r:Comment ;
-    dlp_lite:part_of rd:thread_2 ;
+    dlp_lite:part_of rd:thread_3 ;
     r:created_by rd:JurassicWorldfan555 .
 
 rd:r_c2 a r:Comment ;
@@ -119,20 +116,20 @@ rd:r_c2 a r:Comment ;
 
 rd:r_c3 a r:Comment ;
     crm:P140i_was_attributed_by rd:rating_3 ;
-    dlp_lite:part_of rd:thread_1 ;
+    dlp_lite:part_of rd:thread_2 ;
     r:created_by rd:Fools_Requiem ;
     r:has_reply rd:r_c4 .
 
 rd:r_c4 a r:Comment ;
     crm:P140i_was_attributed_by rd:rating_4 ;
-    dlp_lite:part_of rd:thread_1 ;
+    dlp_lite:part_of rd:thread_2 ;
     r:created_by rd:baquea .
+
+rd:thread_1 a r:Thread .
 
 rd:thread_2 a r:Thread .
 
-rd:JurassicWorldfan555 a r:User .
-
-rd:thread_1 a r:Thread .
+rd:thread_3 a r:Thread .
 
 rd:upvote a r:RatingSystem .
 
