@@ -1,4 +1,4 @@
-# Iteration 2 - Algnment and Refactoring
+# Iteration 2 - Alignment and Refactoring
 
 ## CIDOC-CRMdig and Schema.org
 
