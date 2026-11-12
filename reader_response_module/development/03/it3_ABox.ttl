@@ -20,14 +20,14 @@ rd:Ao3Clause1 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:Ao3ReaderComment ;
     crm:P2_has_type r:Appreciation ;
     schema1:text "ohm y god im so excited WE NEED MOREEEEE." ;
-    r:has_theme r:IndividualExperience .
+    r:has_topic r:IndividualExperience .
 
 rd:Ao3Clause2 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:Ao3ReaderComment ;
     crm:P2_has_type r:Appreciation ;
     crm:P67_refers_to rd:Aang ;
     schema1:text "the air tickling the back of her neck oh aang.... do that more please thank you." ;
-    r:has_theme r:TextualMetatextualMaterial .
+    r:has_topic r:TextualMetatextualMaterial .
 
 rd:Ao3Clause5 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:Ao3AuthorComment ;
@@ -49,28 +49,28 @@ rd:GRClause1 a r:Discourse_Act ;
     crm:P67_refers_to rd:Warhammer_40K ;
     schema1:text "This was a great book, definitely one of the more unique 40k entries." ;
     r:has_sentiment r:Positive ;
-    r:has_theme r:SocialImpact .
+    r:has_topic r:SocialImpact .
 
 rd:GRClause2 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
     crm:P2_has_type r:Evaluation ;
     schema1:text "In it, I found humour, pathos, tension and catharsis." ;
     r:has_sentiment r:Positive ;
-    r:has_theme r:TextualMetatextualMaterial .
+    r:has_topic r:TextualMetatextualMaterial .
 
 rd:GRClause3 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
     crm:P2_has_type r:Evaluation ;
     schema1:text "However, some of the military conflict sections significantly slowed it down for me." ;
     r:has_sentiment r:Negative ;
-    r:has_theme r:IndividualExperience .
+    r:has_topic r:IndividualExperience .
 
 rd:GRClause4 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
     crm:P2_has_type r:Statement ;
     crm:P67_refers_to rd:Orikan_and_Trazyn ;
     schema1:text "The driver of this novel is the relationship between Trazyn the Infinite and Orikan the Diviner." ;
-    r:has_theme r:TextualMetatextualMaterial .
+    r:has_topic r:TextualMetatextualMaterial .
 
 rd:GRClause5 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
@@ -78,7 +78,7 @@ rd:GRClause5 a r:Discourse_Act ;
     crm:P67_refers_to rd:Orikan_and_Trazyn ;
     schema1:text "The scenes in which they converse are by far the most compelling, and I think I was a little disappointed that we didn't get more of them (despite them taking up perhaps half of the novel)." ;
     r:has_sentiment r:Positive ;
-    r:has_theme r:IndividualExperience .
+    r:has_topic r:IndividualExperience .
 
 rd:GRClause6 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
@@ -90,14 +90,14 @@ rd:GRClause7 a r:Discourse_Act ;
     crm:P2_has_type r:Evaluation ;
     schema1:text "If you are interested in Necrons, this is possibly the best work of fiction you could ask for that explores their nature." ;
     r:has_sentiment r:Positive ;
-    r:has_theme r:SocialImpact .
+    r:has_topic r:SocialImpact .
 
 rd:GRClause8 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
     crm:P2_has_type r:Disagreement ;
     schema1:text "I've seen people say this stands alone as a good sci-fi novel, but I'm not sure that it would." ;
     r:has_sentiment r:Negative ;
-    r:has_theme r:SocialImpact .
+    r:has_topic r:SocialImpact .
 
 rd:GRClause9 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:GoodReadsReview ;
@@ -119,7 +119,7 @@ rd:RedditDiscussionSection a r:Discourse_Act ;
     crm:P2_has_type r:Statement ;
     crm:P67_refers_to rd:Kazusa_Onodera ;
     schema1:text "Araburu makes my skin crawl in two distinct ways. The first is any time a scene hit too close to home, like most scenes with Kazusa where I couldn’t help but see my younger self in her and how her insecurities would rather let someone else have the person she liked the herself." ;
-    r:has_theme r:IndividualExperience .
+    r:has_topic r:IndividualExperience .
 
 rd:Aang a golem:G1_Character .
 
@@ -134,13 +134,13 @@ rd:Ao3Clause3 a r:Discourse_Act ;
     schema1:text """also, i hope you don't mind my remark, but i noticed a tiny tiny typo you might've missed "...he murmured against her ear, “I missed you yoo.”"
 
 the yoo thingy. just thought i'd tell you!""" ;
-    r:has_theme r:TextualMetatextualMaterial .
+    r:has_topic r:TextualMetatextualMaterial .
 
 rd:Ao3Clause4 a r:Discourse_Act ;
     crm:P148i_is_component_of rd:Ao3ReaderComment ;
     crm:P2_has_type r:Appreciation ;
     schema1:text "ANYWAYS THANK YOU FOR THE FOOD we are all starving for more >:)" ;
-    r:has_theme r:IndividualExperience .
+    r:has_topic r:IndividualExperience .
 
 rd:Ao3ReaderComment_Action a crmdig:D7_Digital_Machine_Event ;
     crm:P14_carried_out_by rd:Ao3User1 ;

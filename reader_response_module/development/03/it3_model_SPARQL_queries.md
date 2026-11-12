@@ -41,16 +41,16 @@ PREFIX r: <https://w3id.org/golem/ontology/response#> <br />
 PREFIX rd: <https://w3id.org/golem/ontology/response/data#> <br />
 PREFIX schema1: <http://schema.org/> <br />
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> <br />
-SELECT ?clause ?type ?theme ?sentiment ?topic ?topic_type <br />
+SELECT ?clause ?type ?topic ?sentiment ?feature ?golem_class <br />
 WHERE { <br />
 ?clause rdf:type r:Discourse_Act ; <br />
 &nbsp;&nbsp;&nbsp;&nbsp;crm:P148i_is_component_of rd:GoodReadsReview ; <br />
 &nbsp;&nbsp;&nbsp;&nbsp;crm:P2_has_type ?type . <br />
-OPTIONAL {?clause r:has_theme ?theme.} <br />
+OPTIONAL {?clause r:has_topic ?topic.} <br />
 OPTIONAL {?clause r:has_sentiment ?sentiment.} <br />
 OPTIONAL { <br />
-?clause crm:P67_refers_to ?topic . <br />
-?topic rdf:type ?topic_type . <br />
+?clause crm:P67_refers_to ?feature . <br />
+?topic rdf:type ?golem_class . <br />
 } <br />
 } <br />
 

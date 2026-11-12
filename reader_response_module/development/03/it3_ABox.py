@@ -51,7 +51,7 @@ with open("reader_response_module/development/03/it3_data_model.csv", newline=''
             g.add((obj_uri, RDF.type, DISCOURSE_ACT))
             g.add((obj_uri, HAS_TYPE, RESPONSE_ONT[row["discourse_type"].strip()]))
             if row["discourse_theme"]:
-                g.add((obj_uri, RESPONSE_ONT.has_theme, RESPONSE_ONT[row["discourse_theme"].strip()]))
+                g.add((obj_uri, RESPONSE_ONT.has_topic, RESPONSE_ONT[row["discourse_theme"].strip()]))
             if row["discourse_sentiment"]:
                 g.add((obj_uri, RESPONSE_ONT.has_sentiment, RESPONSE_ONT[row["discourse_sentiment"].strip()]))
             if row["responds_to"]:

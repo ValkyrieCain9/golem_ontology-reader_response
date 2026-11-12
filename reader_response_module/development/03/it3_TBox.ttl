@@ -14,12 +14,12 @@
 
 #Object Properties
 
-:has_theme a owl:ObjectProperty ;
-    rdfs:subPropertyOf crm:P2_has_type ;
+:has_topic a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P129_is_about ;
     rdfs:domain :Discourse_Act ;
-    rdfs:range :Creative_Discourse_Theme ;
-    rdfs:label "has theme" ;
-    rdfs:comment "This property connects a discourse act to a discourse theme about creative works." ;
+    rdfs:range :Creative_Discourse_Topic ;
+    rdfs:label "has topic" ;
+    rdfs:comment "This property connects a discourse act to a discourse topic about creative works." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :has_user_role a owl:ObjectProperty ;
@@ -33,7 +33,7 @@
 :has_sentiment a owl:ObjectProperty ;
     rdfs:subPropertyOf crm:P2_has_type ;
     rdfs:domain :Discourse_Act ;
-    rdfs:range :Sentiment ;
+    rdfs:range :Discourse_Sentiment ;
     rdfs:label "has sentiment" ;
     rdfs:comment "This property connects a discourse act to its positive or negative sentiment value." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
@@ -354,13 +354,13 @@ schema:title a owl:DatatypeProperty;
     rdfs:comment "A set of characteristic tags describing the different types of discourse acts derived and extended from the set outlined by 'Zhang, A., Culbertson, B., & Paritosh, P. (2017). Characterizing Online Discussion Using Coarse Discourse Sequences.'" ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
     
-:Creative_Discourse_Theme a owl:Class ;
+:Creative_Discourse_Topic a owl:Class ;
     rdfs:subClassOf crm:E55_Type ;
     rdfs:label "Creative Discourse Theme" ;
     rdfs:comment "The themes in which discourse about creative works can centre around. The three subclasses are adapted from the evaluation characteristics outlined by 'Rebora, S., & Vezzani, G. (2024). Models of Literary Evaluation and Web 2.0. An Annotation Experiment with Goodreads Reviews.'. This class and its subclasses can be used as an interface for different types of creative and literary analysis and can be extended with specific vocabulary terms as needed." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:Sentiment a owl:Class ;
+:Discourse_Sentiment a owl:Class ;
     rdfs:subClassOf crm:E55_Type ;
     rdfs:label "Sentiment" ;
     rdfs:comment "Describes sentiment of a discourse act, either positive or negative. Unlike discourse acts like Appreciation which has an implicit positive degree, this can be assigned to discourse acts without an implicit degree like Evaluation" ;
@@ -379,19 +379,19 @@ schema:title a owl:DatatypeProperty;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :Textual_Metatextual_Material a owl:Class ;
-    rdfs:subClassOf :Creative_Discourse_Theme ;
+    rdfs:subClassOf :Creative_Discourse_Topic ;
     rdfs:label "Textual and Metatextual Material" ;
     rdfs:comment "This theme regards all the textual and metatextual material of a creative work. This includes everything from the style, linguistic and other creative features, formal structure to the plot, the characters, narrative themes, and direct quotes from the work etc." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :Individual_Experience a owl:Class ;
-    rdfs:subClassOf :Creative_Discourse_Theme ;
+    rdfs:subClassOf :Creative_Discourse_Topic ;
     rdfs:label "Individual Experience" ;
     rdfs:comment "This theme focuses on an individual's cognitive, emotional or existential experience of a creative work, including how they personally interacted with it." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
 :Social_Impact a owl:Class ;
-    rdfs:subClassOf :Creative_Discourse_Theme ;
+    rdfs:subClassOf :Creative_Discourse_Topic ;
     rdfs:label "Social Impact" ;
     rdfs:comment "This theme focuses on how a creative work relates to its wider social context. This includes its genre and style classification, canonisation, awards as well as its impact and role in different communities (e.g. fandoms, literary circles, academic institutions etc.)" ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
@@ -555,11 +555,11 @@ schema:MediaObject a owl:Class ;
     rdfs:comment "A thread which has as its parent a nested comment, containing all the deep-nested comments under a single nested comment." ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:Positive a :Sentiment ;
+:Positive a :Discourse_Sentiment ;
     rdfs:label "Positive" ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
-:Negative a :Sentiment ;
+:Negative a :Discourse_Sentiment ;
     rdfs:label "Negative" ;
     rdfs:isDefinedBy <https://w3id.org/golem/ontology/response#> .
 
